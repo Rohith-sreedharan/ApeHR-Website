@@ -7,12 +7,25 @@ import Testimonials from "./component/Testimonials";
 import "@sendbird/chat-ai-widget/dist/style.css";
 import SecondSlide from "./component/SecondSlide";
 import Pricing from "./component/Pricing";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
+  const switchTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <div>
-      <Header />
-      <Hero />
+      <Header isDarkMode={isDarkMode} switchTheme={switchTheme} />
+      <Hero isDarkMode={isDarkMode}/>
       <SecondSlide />
       <Testimonials />
       <Pricing />

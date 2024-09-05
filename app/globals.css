@@ -67,3 +67,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+.bg-gradient-radial-light {
+  background: radial-gradient(ellipse at top center, #fad0c4dd 0%, #fad0c488 10%,#00000000 50%, #00000000 100%);
+}
+
+/* Dark mode gradient with an oval shape stretching full width */
+.bg-gradient-radial-dark {
+  background: radial-gradient(ellipse at top center, #5f2c82 0%, #0c0c3b 10% , #00000000 100%);
+}
+

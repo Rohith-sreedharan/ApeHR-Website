@@ -1,20 +1,13 @@
 import { Moon, Sun } from "lucide-react";
-import { useState, useEffect } from "react";
 
-const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkMode]);
+import React, { FC } from "react";
 
-  const switchTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+type HeaderProps = {
+  isDarkMode: boolean;
+  switchTheme: () => void;
+};
 
+const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
   return (
     <header
       className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600"
@@ -71,7 +64,7 @@ const Header = () => {
             onClick={switchTheme}
             className={`${isDarkMode ? "text-white" : "text-gray-800"} bg-slate-300 dark:bg-gray-800 p-2 rounded-md text-gray-400  focus:outline-none focus:ring-2 focus:ring-blue-500`}
           >
-            {isDarkMode?<Sun size={18}/>:<Moon size={18}/>}
+            {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
           <button className="hidden hover:opacity-75 peer-out-of-range: md:block bg-gray-300 dark:bg-gray-700 py-1.5 px-5 rounded">
@@ -106,5 +99,6 @@ const Header = () => {
     </header>
   );
 };
+
 
 export default Header;

@@ -1,12 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import { motion } from "framer-motion";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import Particles from "@/components/magicui/particles";
-
-const LandingPage = () => {
+type HeroProps = {
+  isDarkMode: boolean;
+};
+const LandingPage: FC<HeroProps> = ({isDarkMode}) => {
   return (
     <div className="bg-white relative dark:bg-black text-white min-h-screen flex flex-col items-center justify-center px-4">
       {/* Top banner */}
+      <div className={`absolute z-0 top-0 left-0 w-full h-1/4 ${isDarkMode ? 'bg-gradient-radial-dark' : 'bg-gradient-radial-light'}`}></div>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,7 +28,7 @@ const LandingPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-center max-w-4xl"
+        className="z-50 text-center max-w-4xl"
       >
         <h1 className="text-5xl text-black dark:text-white md:text-5xl font-bold mb-6">
           From Manual to Automatic Revolutionizing HR One Click at a Time
@@ -118,8 +121,8 @@ const LandingPage = () => {
         className="absolute inset-0 text-black dark:text-white"
         quantity={120}
         ease={80}
-        size={1}
-        color="#a9a9a9"
+        size={0.8}
+        color={isDarkMode ? "#ffffff" : "#000000"}
       />
     </div>
   );
