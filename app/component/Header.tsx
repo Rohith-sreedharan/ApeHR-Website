@@ -1,3 +1,4 @@
+import { Moon, Sun } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Header = () => {
@@ -13,15 +14,19 @@ const Header = () => {
   const switchTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
+
   return (
-    <header className="bg-gray-900 text-white sticky top-0" style={{zIndex:"99"}}>
+    <header
+      className="dark:bg-gray-900 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600"
+      style={{ zIndex: "99" }}
+    >
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">
           <img src="/icon.png" alt="ApeHr" className="w-8 h-8" />
           <span className="text-lg font-semibold">ApeHr</span>
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-5 px-4 ">
+          <nav className="hidden md:flex space-x-5 px-4">
             <a href="#" className="hover:text-gray-300">
               Templates
             </a>
@@ -64,22 +69,15 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-4">
           <button
             onClick={switchTheme}
-            className={`${isDarkMode ? "text-white" : "text-gray-400"} bg-gray-800 p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500`}
+            className={`${isDarkMode ? "text-white" : "text-gray-800"} bg-slate-300 dark:bg-gray-800 p-2 rounded-md text-gray-400  focus:outline-none focus:ring-2 focus:ring-blue-500`}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
+            {isDarkMode?<Sun size={18}/>:<Moon size={18}/>}
           </button>
 
-          <button className="hidden hover:opacity-75 peer-out-of-range: md:block bg-gray-700 py-1.5 px-5 rounded">
+          <button className="hidden hover:opacity-75 peer-out-of-range: md:block bg-gray-300 dark:bg-gray-700 py-1.5 px-5 rounded">
             Login
           </button>
-          <button className="bg-white hover:opacity-75 text-black px-4 py-2 rounded-md ">
+          <button className="bg-black dark:bg-white hover:opacity-75 text-white dark:text-black px-4 py-2 rounded-md ">
             Get ApeHR Pro
           </button>
         </div>
