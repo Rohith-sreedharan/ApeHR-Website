@@ -142,8 +142,11 @@ const SecondSlide = () => {
           src="/chart.jpg"
           animate={{
             y: [0, 10, 0],
+            y: [0, 10, 0],
           }}
           transition={{
+            duration: 4,
+            repeat: Infinity,
             duration: 4,
             repeat: Infinity,
             repeatType: "loop",
