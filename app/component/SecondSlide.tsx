@@ -1,6 +1,25 @@
-import { Plus, SquareCode, SquareDashedMousePointer, Tangent } from "lucide-react";
+import {
+  Plus,
+  SquareCode,
+  SquareDashedMousePointer,
+  Tangent,
+} from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const SecondSlide = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeOut" },
+      });
+    }
+  }, [controls, inView]);
   return (
     <div className="h-screen flex relative bg-primary text-white p-24">
       <div className="right-dotted-line absolute top-0 h-screen left-8 w-0 border-dashed border-l-2 border-gray-800"></div>
@@ -11,21 +30,44 @@ const SecondSlide = () => {
       <div className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2">
         <div className="outer-circle w-80 h-80 rounded-full border-dashed border-2 border-gray-800 "></div>
       </div>
-      <div className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 rotate-45">
+      <motion.div
+        className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 rotate-45"
+        initial={{ rotate: -45, translateX: "50%", translateY: "-50%" }}
+        animate={{
+          rotate: [-45, 135],
+          translateX: ["50%", "50%"],
+          translateY: ["-50%", "-50%"],
+        }}
+        transition={{ repeat: Infinity, duration: 100 }}
+      >
         <div className="left-diagonal w-96 border-dashed border-b-2 border-gray-800 "></div>
-      </div>
-      <div className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 -rotate-45">
+      </motion.div>
+      <motion.div
+        className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 -rotate-45"
+        initial={{ rotate: 45, translateX: "50%", translateY: "-50%" }}
+        animate={{
+          rotate: [45, 225],
+          translateX: ["50%", "50%"],
+          translateY: ["-50%", "-50%"],
+        }}
+        transition={{ repeat: Infinity, duration: 100 }}
+      >
         <div className="left-diagonal w-96 border-dashed border-b-2 border-gray-800 "></div>
-      </div>
+      </motion.div>
       <Plus className="absolute top-4 left-4 text-gray-600" size={40} />
       <Plus className="absolute bottom-4 left-4 text-gray-600" size={40} />
       <div className="flex-1 z-50">
         <p className="text-gray-500 text-sm font-bold mb-6">
           VISUALIZING SUCCESS
         </p>
-        <h1 className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-6xl font-bold mb-10">
-          What's in Minimal?
-        </h1>
+        <motion.h1
+          initial={{ x: "-10%", opacity: 0 }}
+          animate={controls}
+          ref={ref}
+          className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-6xl font-bold mb-10 w-max"
+        >
+          Who we are?
+        </motion.h1>
 
         <div className="flex flex-col gap-8 mb-10">
           <div className="flex gap-8 bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
@@ -81,7 +123,19 @@ const SecondSlide = () => {
             <rect x="90" y="40" width="10" height="40" fill="gray" />
           </svg>
         </div> */}
-        <img className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20" src="/chart.jpg" />
+        <motion.img
+          className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
+          src="/chart.jpg"
+          animate={{
+            y: [0, 10, 0], 
+          }}
+          transition={{
+            duration: 4, 
+            repeat: Infinity, 
+            repeatType: "loop",
+            ease: "easeInOut",
+          }}
+        />
       </div>
     </div>
   );

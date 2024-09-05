@@ -12,14 +12,15 @@
     "@sendbird/chat-ai-widget": "^1.7.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.4.0",
+    "framer-motion": "^11.5.3",
     "lucide-react": "^0.438.0",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.5.2",
+    "react-intersection-observer": "^9.13.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

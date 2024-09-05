@@ -1,6 +1,7 @@
 const Footer = () => {
   return (
-    <div className="bg-primary">
+    <div className="bg-primary relative">
+      <hr className="border-gray-800 border-2 absolute top-20 w-full" />
       <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
         <div className="md:flex md:justify-between px-8 p-4 py-16 sm:pb-16 gap-4"></div>
         <div
@@ -26,15 +27,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
-                      href="/chat"
-                    >
-                      Discord
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
-                      href="https://twitter.com/milliondotjs"
+                      href="https://twitter.com/springreenoff"
                     >
                       Twitter
                     </a>
@@ -42,7 +35,15 @@ const Footer = () => {
                   <li>
                     <a
                       className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
-                      href="mailto:aiden@million.dev"
+                      href="https://twitter.com/springreenoff"
+                    >
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
+                      href="mailto:hello@springreen.in"
                     >
                       Email
                     </a>
