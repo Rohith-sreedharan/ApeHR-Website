@@ -4,12 +4,9 @@ import {
   SquareDashedMousePointer,
   Tangent,
 } from "lucide-react";
-<<<<<<< Updated upstream
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-=======
->>>>>>> Stashed changes
 
 const SecondSlide = () => {
   const controls = useAnimation();
@@ -63,7 +60,6 @@ const SecondSlide = () => {
         <p className="text-gray-500 text-sm font-bold mb-6">
           VISUALIZING SUCCESS
         </p>
-<<<<<<< Updated upstream
         <motion.h1
           initial={{ x: "-10%", opacity: 0 }}
           animate={controls}
@@ -72,11 +68,9 @@ const SecondSlide = () => {
         >
           Who we are?
         </motion.h1>
-=======
         <h1 className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent dark:text-transparent text-6xl font-bold mb-10">
           What's in Minimal?
         </h1>
->>>>>>> Stashed changes
 
         <div className="flex flex-col dark:text-white gap-8 mb-10">
           <div className="flex gap-8 bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
@@ -132,24 +126,30 @@ const SecondSlide = () => {
             <rect x="90" y="40" width="10" height="40" fill="gray" />
           </svg>
         </div> */}
-<<<<<<< Updated upstream
         <motion.img
           className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
           src="/chart.jpg"
           animate={{
-            y: [0, 10, 0], 
+            y: [0, 10, 0],
           }}
           transition={{
-            duration: 4, 
-            repeat: Infinity, 
+            duration: 4,
+            repeat: Infinity,
             repeatType: "loop",
             ease: "easeInOut",
           }}
-=======
+        ></motion.img>
         <img
           className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
           src="/chart.jpg"
->>>>>>> Stashed changes
+        />
+        <img
+          className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
+          src="/chart.jpg"
+        />
+        <img
+          className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
+          src="/chart.jpg"
         />
       </div>
     </div>

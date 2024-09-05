@@ -1,11 +1,6 @@
 const Footer = () => {
   return (
-<<<<<<< Updated upstream
-    <div className="bg-primary relative">
-      <hr className="border-gray-800 border-2 absolute top-20 w-full" />
-=======
-    <div className="bg-primary dark:bg-black dark:text-white">
->>>>>>> Stashed changes
+    <div className="bg-primary dark:bg-black">
       <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
         <div className="md:flex md:justify-between px-8 p-4 py-16 sm:pb-16 gap-4"></div>
         <div
@@ -18,7 +13,7 @@ const Footer = () => {
                 <img src="/apehr-logo.png" className="h-16 w-16 rounded-xl" />
                 <span className="text-white text-4xl font-bold">APE HR</span>
               </a>
-              <p className="max-w-xs text-secondary dark:text-white">
+              <p className="max-w-xs text-secondary">
                 Identify and fix slow code–in minutes, not months.
               </p>
             </div>
@@ -31,7 +26,15 @@ const Footer = () => {
                   <li>
                     <a
                       className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
-                      href="https://twitter.com/springreenoff"
+                      href="/chat"
+                    >
+                      Discord
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
+                      href="https://twitter.com/milliondotjs"
                     >
                       Twitter
                     </a>
@@ -39,15 +42,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
-                      href="https://twitter.com/springreenoff"
-                    >
-                      Twitter
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
-                      href="mailto:hello@springreen.in"
+                      href="mailto:aiden@million.dev"
                     >
                       Email
                     </a>
