@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 
 const LandingPage = () => {
   return (
@@ -11,14 +12,10 @@ const LandingPage = () => {
         transition={{ duration: 0.5 }}
         className="mb-8"
       >
-        <a
-          href="#"
-          className="dark:bg-slate-900 bg-white border-purple-400 border bg-opacity-50 text-purple-300 rounded-full px-4 py-1 flex items-center text-sm"
-        >
-          <span className=" text-xl">🎉</span>
-          <span className="border border-t-1 py-2 border-gray-500  h-3 flex mx-2"></span>
-          <p className="text-purple-400">Introducing Features Section</p>
-          <span className="ml-2 text-xl">›</span>
+        <a href="#">
+          <AnimatedGradientText className="text-black dark:text-white">
+            <span>🎉 Introducing Features Section</span>
+          </AnimatedGradientText>
         </a>
       </motion.div>
 
@@ -121,4 +118,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
