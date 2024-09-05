@@ -119,7 +119,7 @@ const LandingPage: FC<HeroProps> = ({isDarkMode}) => {
       </motion.div>
       <Particles
         className="absolute inset-0 text-black dark:text-white"
-        quantity={120}
+        quantity={100}
         ease={80}
         size={0.8}
         color={isDarkMode ? "#ffffff" : "#000000"}
