@@ -1,4 +1,5 @@
 "use client";
+import Footer from "./component/Footer";
 import Header from "./component/Header";
 import Hero from "./component/Hero";
 import Testimonials from "./component/Testimonials";
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Testimonials />
+      <Footer />
       <ChatAiWidget
         applicationId="A93694F4-EAA9-436C-A442-AD43F444AD13"
         botId="onboarding_bot"
