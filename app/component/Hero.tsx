@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
+import Particles from "@/components/magicui/particles";
 
 const LandingPage = () => {
   return (
-    <div className="bg-white dark:bg-black text-white min-h-screen flex flex-col items-center justify-center px-4">
+    <div className="bg-white relative dark:bg-black text-white min-h-screen flex flex-col items-center justify-center px-4">
       {/* Top banner */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -113,6 +114,13 @@ const LandingPage = () => {
       >
         {/* Chat widget button code here */}
       </motion.div>
+      <Particles
+        className="absolute inset-0 text-black dark:text-white"
+        quantity={120}
+        ease={80}
+        size={1}
+        color="#a9a9a9"
+      />
     </div>
   );
 };

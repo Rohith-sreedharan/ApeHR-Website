@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className="grid grid-cols-1 gap-8 sm:gap-10 sm:grid-cols-2">
               <div>
-                <h2 className="mb-6 text-sm tracking-tighter font-medium text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-sm tracking-tighter font-medium  text-white">
                   Community
                 </h2>
                 <ul className="gap-2 grid">
@@ -51,7 +51,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm tracking-tighter font-medium text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-sm tracking-tighter font-medium  text-white">
                   Legal
                 </h2>
                 <ul className="gap-2 grid">

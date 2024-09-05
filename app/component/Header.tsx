@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <header
-      className="dark:bg-gray-900 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600"
+      className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600"
       style={{ zIndex: "99" }}
     >
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
