@@ -4,9 +4,12 @@ import {
   SquareDashedMousePointer,
   Tangent,
 } from "lucide-react";
+<<<<<<< Updated upstream
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+=======
+>>>>>>> Stashed changes
 
 const SecondSlide = () => {
   const controls = useAnimation();
@@ -21,7 +24,7 @@ const SecondSlide = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="h-screen flex relative bg-primary text-white p-24">
+    <div className="h-screen flex relative bg-primary dark:bg-black text-white dark:text-white p-24">
       <div className="right-dotted-line absolute top-0 h-screen left-8 w-0 border-dashed border-l-2 border-gray-800"></div>
       <div className="top-dotted-line absolute top-8 w-full left-0 h-0 border-dashed border-b-2 border-gray-800"></div>
       <div className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2">
@@ -60,6 +63,7 @@ const SecondSlide = () => {
         <p className="text-gray-500 text-sm font-bold mb-6">
           VISUALIZING SUCCESS
         </p>
+<<<<<<< Updated upstream
         <motion.h1
           initial={{ x: "-10%", opacity: 0 }}
           animate={controls}
@@ -68,8 +72,13 @@ const SecondSlide = () => {
         >
           Who we are?
         </motion.h1>
+=======
+        <h1 className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent dark:text-transparent text-6xl font-bold mb-10">
+          What's in Minimal?
+        </h1>
+>>>>>>> Stashed changes
 
-        <div className="flex flex-col gap-8 mb-10">
+        <div className="flex flex-col dark:text-white gap-8 mb-10">
           <div className="flex gap-8 bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
             <div className="flex items-center mb-4">
               <Tangent size={30} />
@@ -123,6 +132,7 @@ const SecondSlide = () => {
             <rect x="90" y="40" width="10" height="40" fill="gray" />
           </svg>
         </div> */}
+<<<<<<< Updated upstream
         <motion.img
           className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
           src="/chart.jpg"
@@ -135,6 +145,11 @@ const SecondSlide = () => {
             repeatType: "loop",
             ease: "easeInOut",
           }}
+=======
+        <img
+          className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
+          src="/chart.jpg"
+>>>>>>> Stashed changes
         />
       </div>
     </div>

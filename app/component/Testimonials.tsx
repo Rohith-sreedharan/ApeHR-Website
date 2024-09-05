@@ -59,13 +59,13 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="overflow-hidden">
-      <section className="bg-black h-screen">
+    <div className="">
+      <section className="dark:bg-black bg-white ">
         <div className="mx-auto md:text-center  md:max-w-xl lg:max-w-3xl">
-          <h3 className="mb-6 text-5xl font-bold md:mx-0 text-white">
+          <h3 className="mb-6 text-5xl font-bold md:mx-0 dark:text-white text-black">
             Testimonials
           </h3>
-          <p className="mb-6 pb-2 md:mb-12 md:pb-0 mx-1 text-white ">
+          <p className="mb-6 pb-2 md:mb-12 md:pb-0 mx-1 text-black dark:text-white ">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
             error amet numquam iure provident voluptate esse quasi, veritatis
             totam voluptas nostrum quisquam eum porro a pariatur veniam.
@@ -74,7 +74,7 @@ const Testimonials = () => {
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="text-center">
-              <div className="md:mx-3 mx-0  block rounded-lg bg-white shadow-lg dark:shadow-black/30">
+              <div className="md:mx-3 mx-0  block rounded-lg bg-white dark:text-black shadow-lg dark:shadow-black/30">
                 <div className="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
                 <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white">
                   <img

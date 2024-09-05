@@ -1,7 +1,11 @@
 const Footer = () => {
   return (
+<<<<<<< Updated upstream
     <div className="bg-primary relative">
       <hr className="border-gray-800 border-2 absolute top-20 w-full" />
+=======
+    <div className="bg-primary dark:bg-black dark:text-white">
+>>>>>>> Stashed changes
       <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
         <div className="md:flex md:justify-between px-8 p-4 py-16 sm:pb-16 gap-4"></div>
         <div
@@ -11,10 +15,10 @@ const Footer = () => {
           <div className="flex justify-between px-8 p-4 py-16 sm:pb-16 gap-4 w-full">
             <div className="mb-12 flex-col flex gap-4">
               <a className="flex items-center gap-2" href="/">
-                <img src="/apehr-logo.png" className="h-16 w-16 rounded-xl"/>
+                <img src="/apehr-logo.png" className="h-16 w-16 rounded-xl" />
                 <span className="text-white text-4xl font-bold">APE HR</span>
               </a>
-              <p className="max-w-xs text-secondary">
+              <p className="max-w-xs text-secondary dark:text-white">
                 Identify and fix slow code–in minutes, not months.
               </p>
             </div>

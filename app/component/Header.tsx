@@ -1,16 +1,25 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
+  const switchTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <header className="bg-gray-900 text-white">
-      <div className="mx-5 px-4 py-3 flex items-center justify-between">
+      <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">
-          <img src="/icon.png" alt="Magic UI Pro Logo" className="w-8 h-8" />
-          <span className="text-lg font-semibold">Magic UI Pro</span>
-          <span className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded">
-            Beta
-          </span>
+          <img src="/icon.png" alt="ApeHr" className="w-8 h-8" />
+          <span className="text-lg font-semibold">ApeHr</span>
           {/* Navigation */}
           <nav className="hidden md:flex space-x-5 px-4 ">
             <a href="#" className="hover:text-gray-300">
@@ -53,29 +62,10 @@ const Header = () => {
 
         {/* Search, Theme Toggle, and Login */}
         <div className="hidden md:flex items-center space-x-4">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search documentation..."
-              className="bg-gray-800 text-white pl-3 pr-10 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <button className="bg-gray-800 p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button
+            onClick={switchTheme}
+            className={`${isDarkMode ? "text-white" : "text-gray-400"} bg-gray-800 p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -86,11 +76,11 @@ const Header = () => {
             </svg>
           </button>
 
-          <button className="hidden md:block bg-gray-700 py-1.5 px-5 rounded">
+          <button className="hidden hover:opacity-75 peer-out-of-range: md:block bg-gray-700 py-1.5 px-5 rounded">
             Login
           </button>
-          <button className="bg-white text-black px-4 py-2 rounded-md ">
-            Get Magic UI Pro
+          <button className="bg-white hover:opacity-75 text-black px-4 py-2 rounded-md ">
+            Get ApeHR Pro
           </button>
         </div>
       </div>

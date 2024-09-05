@@ -6,6 +6,7 @@ import Testimonials from "./component/Testimonials";
 // import { ChatAiWidget } from "@sendbird/chat-ai-widget";
 import "@sendbird/chat-ai-widget/dist/style.css";
 import SecondSlide from "./component/SecondSlide";
+import Pricing from "./component/Pricing";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <Testimonials />
       <SecondSlide />
+      <Pricing />
       <Footer />
       {/* <ChatAiWidget
         applicationId="A93694F4-EAA9-436C-A442-AD43F444AD13"
