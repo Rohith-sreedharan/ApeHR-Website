@@ -13,8 +13,8 @@ export default function Home() {
     <div>
       <Header />
       <Hero />
-      <Testimonials />
       <SecondSlide />
+      <Testimonials />
       <Pricing />
       <Footer />
       {/* <ChatAiWidget

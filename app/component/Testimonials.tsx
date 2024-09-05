@@ -59,7 +59,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="">
+    <div className="overflow-hidden pt-8">
       <section className="dark:bg-black bg-white ">
         <div className="mx-auto md:text-center  md:max-w-xl lg:max-w-3xl">
           <h3 className="mb-6 text-5xl font-bold md:mx-0 dark:text-white text-black">

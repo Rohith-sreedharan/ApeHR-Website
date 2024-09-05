@@ -1,11 +1,7 @@
 const Footer = () => {
   return (
-<<<<<<< Updated upstream
     <div className="bg-primary relative">
       <hr className="border-gray-800 border-2 absolute top-20 w-full" />
-=======
-    <div className="bg-primary dark:bg-black dark:text-white">
->>>>>>> Stashed changes
       <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
         <div className="md:flex md:justify-between px-8 p-4 py-16 sm:pb-16 gap-4"></div>
         <div

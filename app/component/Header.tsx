@@ -14,7 +14,7 @@ const Header = () => {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <header className="bg-gray-900 text-white">
+    <header className="bg-gray-900 text-white sticky top-0" style={{zIndex:"99"}}>
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">

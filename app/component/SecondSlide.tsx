@@ -4,16 +4,15 @@ import {
   SquareDashedMousePointer,
   Tangent,
 } from "lucide-react";
-<<<<<<< Updated upstream
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-=======
->>>>>>> Stashed changes
 
 const SecondSlide = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
+  const [ref2, inView2] = useInView({ triggerOnce: true });
+  
   useEffect(() => {
     if (inView) {
       controls.start({
@@ -23,15 +22,35 @@ const SecondSlide = () => {
       });
     }
   }, [controls, inView]);
+  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+  
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="h-screen flex relative bg-primary dark:bg-black text-white dark:text-white p-24">
-      <div className="right-dotted-line absolute top-0 h-screen left-8 w-0 border-dashed border-l-2 border-gray-800"></div>
-      <div className="top-dotted-line absolute top-8 w-full left-0 h-0 border-dashed border-b-2 border-gray-800"></div>
+    <div className="h-screen flex relative bg-white dark:bg-black text-black dark:text-white p-24">
+      <div className="right-dotted-line absolute top-0 h-screen left-8 w-0 border-dashed border-l-2 border-gray-300 dark:border-gray-800"></div>
+      <div className="top-dotted-line absolute top-8 w-full left-0 h-0 border-dashed border-b-2 border-gray-300 dark:border-gray-800"></div>
       <div className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2">
-        <div className="inner-circle w-48 h-48 rounded-full border-dashed border-2 border-gray-800 "></div>
+        <div className="inner-circle w-48 h-48 rounded-full border-dashed border-2 border-gray-300 dark:border-gray-800"></div>
       </div>
       <div className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2">
-        <div className="outer-circle w-80 h-80 rounded-full border-dashed border-2 border-gray-800 "></div>
+        <div className="outer-circle w-80 h-80 rounded-full border-dashed border-2 border-gray-300 dark:border-gray-800"></div>
       </div>
       <motion.div
         className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 rotate-45"
@@ -43,7 +62,7 @@ const SecondSlide = () => {
         }}
         transition={{ repeat: Infinity, duration: 100 }}
       >
-        <div className="left-diagonal w-96 border-dashed border-b-2 border-gray-800 "></div>
+        <div className="left-diagonal w-96 border-dashed border-b-2 border-gray-300 dark:border-gray-800"></div>
       </motion.div>
       <motion.div
         className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 -rotate-45"
@@ -55,101 +74,81 @@ const SecondSlide = () => {
         }}
         transition={{ repeat: Infinity, duration: 100 }}
       >
-        <div className="left-diagonal w-96 border-dashed border-b-2 border-gray-800 "></div>
+        <div className="left-diagonal w-96 border-dashed border-b-2 border-gray-300 dark:border-gray-800"></div>
       </motion.div>
-      <Plus className="absolute top-4 left-4 text-gray-600" size={40} />
-      <Plus className="absolute bottom-4 left-4 text-gray-600" size={40} />
+      <Plus className="absolute top-4 left-4 text-gray-400 dark:text-gray-600" size={40} />
+      <Plus className="absolute bottom-4 left-4 text-gray-400 dark:text-gray-600" size={40} />
       <div className="flex-1 z-50">
-        <p className="text-gray-500 text-sm font-bold mb-6">
+        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold mb-6">
           VISUALIZING SUCCESS
         </p>
-<<<<<<< Updated upstream
         <motion.h1
           initial={{ x: "-10%", opacity: 0 }}
           animate={controls}
           ref={ref}
-          className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-6xl font-bold mb-10 w-max"
+          className="bg-gradient-to-r from-black dark:from-white to-transparent bg-clip-text text-transparent text-6xl font-bold mb-10 w-max"
         >
           Who we are?
         </motion.h1>
-=======
-        <h1 className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent dark:text-transparent text-6xl font-bold mb-10">
-          What's in Minimal?
-        </h1>
->>>>>>> Stashed changes
 
-        <div className="flex flex-col dark:text-white gap-8 mb-10">
-          <div className="flex gap-8 bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+        <motion.div
+          ref={ref2}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView2 ? "visible" : "hidden"}
+          className="flex flex-col gap-8 mb-10"
+        >
+          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
             <div className="flex items-center mb-4">
               <Tangent size={30} />
             </div>
             <div>
               <h2 className="text-xl font-semibold">Branding</h2>
-              <p className="font-thin text-gray-300">
+              <p className="dark:font-thin text-gray-600 dark:text-gray-300">
                 Consistent design makes it easy to brand your own.
               </p>
             </div>
-          </div>
-          <div className="flex gap-8 bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+          </motion.div>
+
+          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
             <div className="flex items-center mb-4">
               <SquareDashedMousePointer size={30} />
             </div>
             <div>
               <h2 className="text-xl font-semibold">UI & UX design</h2>
-              <p className="font-thin text-gray-300">
+              <p className="dark:font-thin text-gray-600 dark:text-gray-300">
                 The kit is built on the principles of the atomic design system.
               </p>
             </div>
-          </div>
-          <div className="flex gap-8 bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+          </motion.div>
+
+          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
             <div className="flex items-center mb-4">
               <SquareCode size={30} />
             </div>
             <div>
               <h2 className="text-xl font-semibold">Development</h2>
-              <p className="font-thin text-gray-300">
+              <p className="dark:font-thin text-gray-600 dark:text-gray-300">
                 Easy to customize and extend, saving you time and money.
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-      <div className="flex-1 p-6 rounded-lg shadow-lg w-full md:w-2/3">
-        {/* <h2 className="text-xl font-semibold mb-4">
-          Area Installed (+43%) than last year
-        </h2>
-        <div className="flex justify-between mb-2">
-          <span>Asia</span>
-          <span>Europe</span>
-          <span>Americas</span>
-        </div>
-        <div className="h-64">
-          <svg className="w-full h-full" viewBox="0 0 100 100">
-            <rect x="10" y="30" width="10" height="40" fill="gray" />
-            <rect x="30" y="50" width="10" height="20" fill="gray" />
-            <rect x="50" y="10" width="10" height="80" fill="gray" />
-            <rect x="70" y="20" width="10" height="60" fill="gray" />
-            <rect x="90" y="40" width="10" height="40" fill="gray" />
-          </svg>
-        </div> */}
-<<<<<<< Updated upstream
+
+      <div className="flex-1 p-6 rounded-lg w-full md:w-2/3">
         <motion.img
-          className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
+          className="absolute z-50 border-2 shadow-lg border-gray-300 dark:border-gray-800 rounded-lg -right-0 top-20"
           src="/chart.jpg"
           animate={{
-            y: [0, 10, 0], 
+            y: [0, 10, 0],
           }}
           transition={{
-            duration: 4, 
-            repeat: Infinity, 
+            duration: 4,
+            repeat: Infinity,
             repeatType: "loop",
             ease: "easeInOut",
           }}
-=======
-        <img
-          className="absolute z-50 border-2 border-gray-800 rounded-lg -right-0 top-20"
-          src="/chart.jpg"
->>>>>>> Stashed changes
         />
       </div>
     </div>
