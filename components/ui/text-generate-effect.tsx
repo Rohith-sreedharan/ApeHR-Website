@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useInView } from "react-intersection-observer";
 
 export const TextGenerateEffect = ({
   words,
@@ -15,20 +16,23 @@ export const TextGenerateEffect = ({
   duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   let wordsArray = words.split(" ");
   useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-        filter: filter ? "blur(0px)" : "none",
-      },
-      {
-        duration: duration ? duration : 1,
-        delay: stagger(0.2),
-      }
-    );
-  }, [scope.current]);
+    if (inView) {
+      animate(
+        "span",
+        {
+          opacity: 1,
+          filter: filter ? "blur(0px)" : "none",
+        },
+        {
+          duration: duration ? duration : 1,
+          delay: stagger(0.2),
+        },
+      );
+    }
+  }, [inView]);
 
   const renderWords = () => {
     return (
@@ -36,8 +40,9 @@ export const TextGenerateEffect = ({
         {wordsArray.map((word, idx) => {
           return (
             <motion.span
+              initial={{ x: "-10%", opacity: 0 }}
               key={word + idx}
-              className="dark:text-white text-black opacity-0"
+              className="dark:text-white p-1 text-black opacity-0 text-5xl"
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
@@ -51,7 +56,7 @@ export const TextGenerateEffect = ({
   };
 
   return (
-    <div className={cn("font-bold", className)}>
+    <div ref={ref} className={cn("font-bold", className)}>
       <div className="mt-4">
         <div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
           {renderWords()}

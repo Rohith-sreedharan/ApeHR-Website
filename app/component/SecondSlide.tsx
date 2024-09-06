@@ -102,45 +102,43 @@ const SecondSlide = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView2 ? "visible" : "hidden"}
-          className="flex flex-col gap-4 sm:gap-6 lg:gap-8"
+          className="flex flex-col gap-8 mb-10"
         >
-          {[
-            {
-              icon: Tangent,
-              title: "Branding",
-              description: "Consistent design makes it easy to brand your own.",
-            },
-            {
-              icon: SquareDashedMousePointer,
-              title: "UI & UX design",
-              description:
-                "The kit is built on the principles of the atomic design system.",
-            },
-            {
-              icon: SquareCode,
-              title: "Development",
-              description:
-                "Easy to customize and extend, saving you time and money.",
-            },
-          ].map((card, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className="card flex gap-4 sm:gap-6 lg:gap-8 bg-gray-200 dark:bg-gray-800/25 p-4 sm:p-6 rounded-lg shadow-lg w-full lg:w-3/5"
-            >
-              <div className="flex items-center mb-2 sm:mb-4">
-                <card.icon size={24} />
-              </div>
-              <div>
-                <h2 className="text-lg sm:text-xl font-semibold">
-                  {card.title}
-                </h2>
-                <p className="text-sm sm:text-base dark:font-thin text-gray-600 dark:text-gray-300">
-                  {card.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+            <div className="flex items-center mb-4">
+              <Tangent size={30} />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold">Branding</h2>
+              <p className="dark:font-thin text-gray-600 dark:text-gray-300">
+                Consistent design makes it easy to brand your own.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+            <div className="flex items-center mb-4">
+              <SquareDashedMousePointer size={30} />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold">UI & UX design</h2>
+              <p className="dark:font-thin text-gray-600 dark:text-gray-300">
+                The kit is built on the principles of the atomic design system.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+            <div className="flex items-center mb-4">
+              <SquareCode size={30} />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold">Development</h2>
+              <p className="dark:font-thin text-gray-600 dark:text-gray-300">
+                Easy to customize and extend, saving you time and money.
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
 
