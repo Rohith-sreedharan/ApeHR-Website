@@ -1,6 +1,5 @@
 import { Moon, Sun } from "lucide-react";
-
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 
 type HeaderProps = {
   isDarkMode: boolean;
@@ -8,11 +7,14 @@ type HeaderProps = {
 };
 
 const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // const toggleMobileMenu = () => {
+  //   setIsMobileMenuOpen(!isMobileMenuOpen);
+  // };
+
   return (
-    <header
-      className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600"
-      style={{ zIndex: "99" }}
-    >
+    <header className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600 z-50">
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">
@@ -20,27 +22,21 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
           <span className="text-lg font-semibold">ApeHr</span>
           {/* Navigation */}
           <nav className="hidden md:flex space-x-5 px-4">
-            <a href="#" className="hover:text-gray-300">
-              Templates
-            </a>
-            <a href="#" className="hover:text-gray-300">
-              Sections
-            </a>
-            <a href="#" className="hover:text-gray-300">
-              Pricing
-            </a>
-            <a href="#" className="hover:text-gray-300">
-              Roadmap
-            </a>
-            <a href="#" className="hover:text-gray-300">
-              Discord
-            </a>
+            {["Templates", "Sections", "Pricing", "Roadmap", "Discord"].map((item) => (
+              <a key={item} href="#" className="hover:text-gray-300 transition-colors">
+                {item}
+              </a>
+            ))}
           </nav>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button className="text-gray-400 hover:text-white focus:outline-none">
+        {/* <div className="md:hidden">
+          <button
+            className="text-gray-400 hover:text-white focus:outline-none"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -56,49 +52,56 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
               <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </button>
-        </div>
+        </div> */}
 
         {/* Search, Theme Toggle, and Login */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="flex items-center space-x-4">
           <button
             onClick={switchTheme}
-            className={`${isDarkMode ? "text-white" : "text-gray-800"} bg-slate-300 dark:bg-gray-800 p-2 rounded-md text-gray-400  focus:outline-none focus:ring-2 focus:ring-blue-500`}
+            className="bg-slate-300 dark:bg-gray-800 p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
             {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          <button className="hidden hover:opacity-75 peer-out-of-range: md:block bg-gray-300 dark:bg-gray-700 py-1.5 px-5 rounded">
+          <button className="bg-gray-300 dark:bg-gray-700 py-1.5 px-5 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors">
             Login
           </button>
-          <button className="bg-black dark:bg-white hover:opacity-75 text-white dark:text-black px-4 py-2 rounded-md ">
+          <button className="bg-black hidden md:flex dark:bg-white text-white dark:text-black px-4 py-2 rounded-md hover:opacity-75 transition-opacity">
             Get ApeHR Pro
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className="md:hidden">
-        <nav className="flex flex-col space-y-2 mt-2 px-4">
-          <a href="#" className="hover:text-gray-300">
-            Templates
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Sections
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Pricing
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Roadmap
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Discord
-          </a>
-        </nav>
-      </div>
+      {/* {isMobileMenuOpen && (
+        <div className="md:hidden bg-gray-100 dark:bg-gray-800">
+          <nav className="flex flex-col space-y-2 py-4 px-4">
+            {["Templates", "Sections", "Pricing", "Roadmap", "Discord"].map((item) => (
+              <a key={item} href="#" className="hover:text-gray-300 transition-colors">
+                {item}
+              </a>
+            ))}
+            <div className="flex items-center space-x-2 mt-4">
+              <button
+                onClick={switchTheme}
+                className="bg-slate-300 dark:bg-gray-700 p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+              <button className="bg-gray-300 dark:bg-gray-700 py-1.5 px-5 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors  text-sm ">
+                Login
+              </button>
+            </div>
+            <button className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-md hover:opacity-75 transition-opacity text-sm w-40">
+              Get ApeHR Pro
+            </button>
+          </nav>
+        </div>
+      )} */}
     </header>
   );
 };
-
 
 export default Header;

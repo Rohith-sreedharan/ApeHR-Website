@@ -2,22 +2,31 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import Particles from "@/components/magicui/particles";
+
 type HeroProps = {
   isDarkMode: boolean;
 };
-const LandingPage: FC<HeroProps> = ({isDarkMode}) => {
+
+const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
   return (
-    <div className="bg-white relative dark:bg-black text-white min-h-screen flex flex-col items-center justify-center px-4">
+    <div className="bg-white relative dark:bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Top banner */}
-      <div className={`absolute z-0 top-0 left-0 w-full h-1/4 ${isDarkMode ? 'bg-gradient-radial-dark' : 'bg-gradient-radial-light'}`}></div>
+      <div
+  className={`absolute z-0 top-0 left-0 w-full h-1/4 
+    ${isDarkMode 
+      ? 'bg-gradient-to-b from-gray-900 to-transparent' 
+      : 'bg-gradient-to-b from-purple-100 to-transparent'
+    }`}
+></div>
+
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-8"
+        className="mb-8 text-center"
       >
         <a href="#">
-          <AnimatedGradientText className="text-black dark:text-white">
+          <AnimatedGradientText className="text-black dark:text-white text-sm sm:text-base">
             <span>🎉 Introducing Features Section</span>
           </AnimatedGradientText>
         </a>
@@ -30,10 +39,10 @@ const LandingPage: FC<HeroProps> = ({isDarkMode}) => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="z-50 text-center max-w-4xl"
       >
-        <h1 className="text-5xl text-black dark:text-white md:text-5xl font-bold mb-6">
+        <h1 className="text-3xl sm:text-4xl tracking-wide leading-relaxed  md:text-5xl text-black dark:text-white font-bold mb-6">
           From Manual to Automatic Revolutionizing HR One Click at a Time
         </h1>
-        <p className="text-gray-400 mb-8">
+        <p className="text-gray-400 mb-8 text-sm sm:text-base">
           30+ beautiful sections and templates built with React, Typescript,
           Tailwind CSS, and Framer Motion. Save thousands of hours, create a
           beautiful landing page, and convert your visitors into customers.
@@ -44,19 +53,19 @@ const LandingPage: FC<HeroProps> = ({isDarkMode}) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex justify-center space-x-4 mb-8"
+          className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="dark:bg-white bg-purple-600 text-white dark:text-black px-6 py-3 rounded-full font-semibold"
+            className="dark:bg-white bg-purple-600 text-white dark:text-black px-6 py-3 rounded-full font-semibold text-sm sm:text-base"
           >
             Browse Templates ›
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold"
+            className="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base"
           >
             Get Magic UI Pro ›
           </motion.button>
@@ -67,16 +76,16 @@ const LandingPage: FC<HeroProps> = ({isDarkMode}) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex items-center justify-center mb-8"
+          className="flex flex-col sm:flex-row items-center justify-center mb-8 space-y-4 sm:space-y-0"
         >
-          <div className="flex -space-x-5 mr-4">
+          <div className="flex -space-x-3 sm:-space-x-5 mr-0 sm:mr-4 mb-2 sm:mb-0">
             {[...Array(5)].map((_, i) => (
               <motion.img
                 key={i}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 * i }}
-                className="w-11 h-11 rounded-full border-2 dark:border-white border-black "
+                className="w-8 h-8 sm:w-11 sm:h-11 rounded-full border-2 dark:border-white border-black"
                 src={`https://i.pravatar.cc/150?img=${i + 1}`}
                 alt="User avatar"
               />

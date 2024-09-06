@@ -77,8 +77,8 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        'gradient-radial-light': 'radial-gradient(circle at top, #ff9a9e, #fad0c4)',
-        'gradient-radial-dark': 'radial-gradient(circle at top, #5f2c82, #49a09d)',
+        'gradient-radial-light': 'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%)',
+        'gradient-radial-dark': 'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)',
       },
       keyframes1: {
         "accordion-down": {
