@@ -1,112 +1,98 @@
-"use client";
-import React from "react";
-import Slider from "react-slick";
+import { cn } from "@/lib/utils";
+import Marquee from "@/components/magicui/marquee";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+const reviews = [
+  {
+    name: "Jack",
+    username: "@jack",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: "https://avatar.vercel.sh/jack",
+  },
+  {
+    name: "Jill",
+    username: "@jill",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://avatar.vercel.sh/jill",
+  },
+  {
+    name: "John",
+    username: "@john",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/john",
+  },
+  {
+    name: "Jane",
+    username: "@jane",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jane",
+  },
+  {
+    name: "Jenny",
+    username: "@jenny",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jenny",
+  },
+  {
+    name: "James",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+];
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Maria Smantha",
-      image: "https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp",
-      text: "Lorem ipsum dolor sit amet eos adipisci, consectetur adipisicing elit.",
-    },
-    {
-      id: 2,
-      name: "Lisa Cudrow",
-      image: "https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp",
-      text: "Neque cupiditate assumenda in maiores repudi mollitia architecto.",
-    },
-    {
-      id: 3,
-      name: "John Smith",
-      image: "https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp",
-      text: "Delectus impedit saepe officiis ab aliquam repellat rem unde ducimus.",
-    },
-    {
-      id: 3,
-      name: "John Smith",
-      image: "https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp",
-      text: "Delectus impedit saepe officiis ab aliquam repellat rem unde ducimus.",
-    },
-  ];
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    slidesToShow: 3,
-    autoplaySpeed: 1500, // Show only one slide on small screens
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768, // Breakpoint for tablets
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024, // Breakpoint for desktops
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
 
+const ReviewCard = ({
+  img,
+  name,
+  username,
+  body,
+}: {
+  img: string;
+  name: string;
+  username: string;
+  body: string;
+}) => {
   return (
-    <div className="overflow-hidden pt-8">
-      <section className="dark:bg-black bg-white ">
-        <div className="mx-auto md:text-center  md:max-w-xl lg:max-w-3xl">
-          <h3 className="mb-6 text-5xl font-bold md:mx-0 dark:text-white text-black">
-            Testimonials
-          </h3>
-          <p className="mb-6 pb-2 md:mb-12 md:pb-0 mx-1 text-black dark:text-white ">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-            error amet numquam iure provident voluptate esse quasi, veritatis
-            totam voluptas nostrum quisquam eum porro a pariatur veniam.
-          </p>
+    <figure
+      className={cn(
+        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        // dark styles
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+      )}
+    >
+      <div className="flex flex-row items-center gap-2">
+        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-sm font-medium dark:text-white">
+            {name}
+          </figcaption>
+          <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
-        <Slider {...settings}>
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="text-center">
-              <div className="md:mx-3 mx-0  block rounded-lg bg-white dark:text-black shadow-lg dark:shadow-black/30">
-                <div className="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
-                <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white">
-                  <img
-                    src={testimonial.image}
-                    className="w-full"
-                    alt={testimonial.name}
-                  />
-                </div>
-                <div className="p-6 my-5 ">
-                  <h4 className="mb-4 text-2xl font-semibold">
-                    {testimonial.name}
-                  </h4>
-                  <hr />
-                  <p className="mt-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="inline-block h-7 w-7 pr-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
-                    </svg>
-                    {testimonial.text}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </section>
-    </div>
+      </div>
+      <blockquote className="mt-2 text-sm">{body}</blockquote>
+    </figure>
   );
 };
 
-export default Testimonials;
+export default function MarqueeDemo() {
+  return (
+    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+      <Marquee pauseOnHover className="[--duration:20s]">
+        {firstRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      <Marquee reverse pauseOnHover className="[--duration:20s]">
+        {secondRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+    </div>
+  );
+}

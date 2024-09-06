@@ -2,12 +2,13 @@
 import Footer from "./component/Footer";
 import Header from "./component/Header";
 import Hero from "./component/Hero";
-import Testimonials from "./component/Testimonials";
+// import Testimonials from "./component/Testimonials";
 // import { ChatAiWidget } from "@sendbird/chat-ai-widget";
 import "@sendbird/chat-ai-widget/dist/style.css";
 import SecondSlide from "./component/SecondSlide";
 import Pricing from "./component/Pricing";
 import { useEffect, useState } from "react";
+import MarqueeDemo from "./component/Testimonials";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -27,7 +28,7 @@ export default function Home() {
       <Header isDarkMode={isDarkMode} switchTheme={switchTheme} />
       <Hero isDarkMode={isDarkMode}/>
       <SecondSlide />
-      <Testimonials />
+      <MarqueeDemo />
       <Pricing />
       <Footer />
       {/* <ChatAiWidget

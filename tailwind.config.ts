@@ -18,6 +18,20 @@ const config = {
       },
     },
     extend: {
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+      },
       colors: {
         'light-gradient-start': '#ff9a9e', // pinkish peach
         'light-gradient-end': '#fad0c4',
@@ -66,7 +80,7 @@ const config = {
         'gradient-radial-light': 'radial-gradient(circle at top, #ff9a9e, #fad0c4)',
         'gradient-radial-dark': 'radial-gradient(circle at top, #5f2c82, #49a09d)',
       },
-      keyframes: {
+      keyframes1: {
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -81,7 +95,7 @@ const config = {
           },
         },
       },
-      animation: {
+      animation1: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         gradient2: "gradient2 8s linear infinite",
