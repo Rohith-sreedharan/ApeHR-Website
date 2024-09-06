@@ -12,7 +12,7 @@ const SecondSlide = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
   const [ref2, inView2] = useInView({ triggerOnce: true });
-  
+
   useEffect(() => {
     if (inView) {
       controls.start({
@@ -22,7 +22,7 @@ const SecondSlide = () => {
       });
     }
   }, [controls, inView]);
-  
+
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -31,7 +31,7 @@ const SecondSlide = () => {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
-  
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -76,8 +76,14 @@ const SecondSlide = () => {
       >
         <div className="left-diagonal w-96 border-dashed border-b-2 border-gray-300 dark:border-gray-800"></div>
       </motion.div>
-      <Plus className="absolute top-4 left-4 text-gray-400 dark:text-gray-600" size={40} />
-      <Plus className="absolute bottom-4 left-4 text-gray-400 dark:text-gray-600" size={40} />
+      <Plus
+        className="absolute top-4 left-4 text-gray-400 dark:text-gray-600"
+        size={40}
+      />
+      <Plus
+        className="absolute bottom-4 left-4 text-gray-400 dark:text-gray-600"
+        size={40}
+      />
       <div className="flex-1 z-50">
         <p className="text-gray-500 dark:text-gray-400 text-sm font-bold mb-6">
           VISUALIZING SUCCESS
@@ -98,7 +104,10 @@ const SecondSlide = () => {
           animate={inView2 ? "visible" : "hidden"}
           className="flex flex-col gap-8 mb-10"
         >
-          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+          <motion.div
+            variants={cardVariants}
+            className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5"
+          >
             <div className="flex items-center mb-4">
               <Tangent size={30} />
             </div>
@@ -110,7 +119,10 @@ const SecondSlide = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+          <motion.div
+            variants={cardVariants}
+            className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5"
+          >
             <div className="flex items-center mb-4">
               <SquareDashedMousePointer size={30} />
             </div>
@@ -122,7 +134,10 @@ const SecondSlide = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={cardVariants} className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5">
+          <motion.div
+            variants={cardVariants}
+            className="card flex gap-8 bg-gray-200 dark:bg-gray-800/25 p-6 rounded-lg shadow-lg w-3/5"
+          >
             <div className="flex items-center mb-4">
               <SquareCode size={30} />
             </div>

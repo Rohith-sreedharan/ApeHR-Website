@@ -9,6 +9,7 @@ import SecondSlide from "./component/SecondSlide";
 import Pricing from "./component/Pricing";
 import { useEffect, useState } from "react";
 import MarqueeDemo from "./component/Testimonials";
+import WhyUs from "./component/WhyUs";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -26,7 +27,8 @@ export default function Home() {
   return (
     <div>
       <Header isDarkMode={isDarkMode} switchTheme={switchTheme} />
-      <Hero isDarkMode={isDarkMode}/>
+      <Hero isDarkMode={isDarkMode} />
+      <WhyUs />
       <SecondSlide />
       <MarqueeDemo />
       <Pricing />
