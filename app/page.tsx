@@ -10,6 +10,7 @@ import Pricing from "./component/Pricing";
 import { useEffect, useState } from "react";
 import MarqueeDemo from "./component/Testimonials";
 import WhyUs from "./component/WhyUs";
+import ResponsiveMarquee from "./component/ResponsiveMarquee";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -30,7 +31,7 @@ export default function Home() {
       <Hero isDarkMode={isDarkMode} />
       <WhyUs />
       <SecondSlide />
-      <MarqueeDemo />
+      <ResponsiveMarquee />
       <Pricing />
       <Footer />
       {/* <ChatAiWidget

@@ -22,11 +22,17 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
           <span className="text-lg font-semibold">ApeHr</span>
           {/* Navigation */}
           <nav className="hidden md:flex space-x-5 px-4">
-            {["Templates", "Sections", "Pricing", "Roadmap", "Discord"].map((item) => (
-              <a key={item} href="#" className="hover:text-gray-300 transition-colors">
-                {item}
-              </a>
-            ))}
+            {["Templates", "Sections", "Pricing", "Roadmap", "Discord"].map(
+              (item) => (
+                <a
+                  key={item}
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  {item}
+                </a>
+              )
+            )}
           </nav>
         </div>
 
@@ -59,7 +65,9 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
           <button
             onClick={switchTheme}
             className="bg-slate-300 dark:bg-gray-800 p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
           >
             {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>

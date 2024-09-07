@@ -131,9 +131,9 @@ const SecondSlide = () => {
         </motion.div>
       </div>
 
-      <div className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-auto">
+      <div className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-auto mt-8 lg:mt-0">
         <motion.img
-          className="absolute z-10 border-2 shadow-lg border-gray-300 dark:border-gray-800 rounded-lg right-0 lg:-right-12 top-0 lg:top-20 w-3/4 sm:w-2/3 md:w-1/2 lg:w-full max-w-xl"
+          className="absolute z-10 border-2 mx-1 shadow-lg border-gray-300 dark:border-gray-800 rounded-lg right-0 lg:-right-12 top-0 lg:top-20 w-3/4 sm:w-2/3 md:w-1/2 lg:w-full max-w-xl"
           src="/chart.jpg"
           alt="Chart"
           animate={{

@@ -12,12 +12,10 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
     <div className="bg-white relative dark:bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Top banner */}
       <div
-  className={`absolute z-0 top-0 left-0 w-full h-1/4 
-    ${isDarkMode 
-      ? 'bg-gradient-to-b from-gray-900 to-transparent' 
-      : 'bg-gradient-to-b from-purple-100 to-transparent'
-    }`}
-></div>
+        className={`absolute z-0 top-0 left-0 w-full h-1/4 ${
+          isDarkMode ? "bg-gradient-radial-dark" : "bg-gradient-radial-light"
+        }`}
+      ></div>
 
       <motion.div
         initial={{ opacity: 0, y: -50 }}
