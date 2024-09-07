@@ -14,7 +14,10 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
   // };
 
   return (
-    <header className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600 z-50" style={{zIndex:9999}}>
+    <header
+      className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600 z-50"
+      style={{ zIndex: 9999 }}
+    >
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">
@@ -31,7 +34,7 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
                 >
                   {item}
                 </a>
-              )
+              ),
             )}
           </nav>
         </div>
@@ -75,7 +78,9 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
           <button className="bg-gray-300 hidden md:flex dark:bg-gray-700 py-1.5 px-5 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors">
             Login
           </button>
-          <button className="bg-black dark:bg-white text-white dark:text-black px-2 py-1.5 text-xs rounded-md hover:opacity-75 transition-opacity md:px-2 md:py-2 md:text-sm">Get ApeHR Pro</button>
+          <button className="bg-black font-semibold dark:bg-white text-white dark:text-black px-2 py-1.5 text-xs rounded-md hover:opacity-75 transition-opacity md:px-2 md:py-2 md:text-sm">
+            Get ApeHR Pro
+          </button>
         </div>
       </div>
 
