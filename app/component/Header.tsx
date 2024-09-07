@@ -72,12 +72,10 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
             {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          <button className="bg-gray-300 dark:bg-gray-700 py-1.5 px-5 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors">
+          <button className="bg-gray-300 hidden md:flex dark:bg-gray-700 py-1.5 px-5 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors">
             Login
           </button>
-          <button className="bg-black hidden md:flex dark:bg-white text-white dark:text-black px-4 py-2 rounded-md hover:opacity-75 transition-opacity">
-            Get ApeHR Pro
-          </button>
+          <button className="bg-black dark:bg-white text-white dark:text-black px-2 py-1.5 text-xs rounded-md hover:opacity-75 transition-opacity md:px-2 md:py-2 md:text-sm">Get ApeHR Pro</button>
         </div>
       </div>
 

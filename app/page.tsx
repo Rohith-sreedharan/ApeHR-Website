@@ -8,7 +8,6 @@ import "@sendbird/chat-ai-widget/dist/style.css";
 import SecondSlide from "./component/SecondSlide";
 import Pricing from "./component/Pricing";
 import { useEffect, useState } from "react";
-import MarqueeDemo from "./component/Testimonials";
 import WhyUs from "./component/WhyUs";
 import ResponsiveMarquee from "./component/ResponsiveMarquee";
 
