@@ -11,14 +11,24 @@ import { useEffect, useState } from "react";
 import WhyUs from "./component/WhyUs";
 import ResponsiveMarquee from "./component/ResponsiveMarquee";
 
+const THEME_KEY = "theme";
+
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    return savedTheme === "dark";
+  });
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    localStorage.setItem(THEME_KEY, isDarkMode ? "dark" : "light");
   }, [isDarkMode]);
 
   const switchTheme = () => {
