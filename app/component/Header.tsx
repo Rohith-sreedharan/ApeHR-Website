@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
   // };
 
   return (
-    <header className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600 z-50">
+    <header className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600 z-50" style={{zIndex:9999}}>
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">
