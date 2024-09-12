@@ -14,10 +14,14 @@ import ResponsiveMarquee from "./component/ResponsiveMarquee";
 const THEME_KEY = "theme";
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem(THEME_KEY);
-    return savedTheme === "dark";
-  });
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    // Check if we're running on the client (browser)
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      setIsDarkMode(savedTheme === "dark");
+    }
+  }, []);
 
   useEffect(() => {
     if (isDarkMode) {
