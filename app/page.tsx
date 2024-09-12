@@ -14,14 +14,12 @@ import ResponsiveMarquee from "./component/ResponsiveMarquee";
 const THEME_KEY = "theme";
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  useEffect(() => {
-    // Check if we're running on the client (browser)
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem(THEME_KEY);
-      setIsDarkMode(savedTheme === "dark");
-    }
-  }, []);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    return savedTheme === "dark";
+  });
+  // Directly setting it to the state solves the problem where the
+  // user's preference will not be resetted after re-rendering the site
 
   useEffect(() => {
     if (isDarkMode) {
