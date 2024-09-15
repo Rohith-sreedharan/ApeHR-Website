@@ -41,9 +41,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
           From Manual to Automatic Revolutionizing HR One Click at a Time
         </h1>
         <p className="text-gray-400 mb-8 text-sm sm:text-base">
-          30+ beautiful sections and templates built with React, Typescript,
-          Tailwind CSS, and Framer Motion. Save thousands of hours, create a
-          beautiful landing page, and convert your visitors into customers.
+          A new generation platform for your recruitment processes
         </p>
 
         {/* Buttons */}
@@ -109,7 +107,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
               </span>
             </div>
             <p className="text-xs text-black dark:text-white font-bold">
-              1,000+ developers making beautiful landing pages
+              1,000+ companies love using us
             </p>
           </div>
         </motion.div>

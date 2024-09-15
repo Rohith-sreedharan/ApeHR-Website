@@ -10,6 +10,7 @@ import Pricing from "./component/Pricing";
 import { useEffect, useState } from "react";
 import WhyUs from "./component/WhyUs";
 import ResponsiveMarquee from "./component/ResponsiveMarquee";
+import Dataslide from "./component/Dataslide";
 
 const THEME_KEY = "theme";
 
@@ -42,6 +43,7 @@ export default function Home() {
       <Hero isDarkMode={isDarkMode} />
       <WhyUs />
       <SecondSlide />
+      <Dataslide isDarkMode={isDarkMode}/>
       <ResponsiveMarquee />
       <Pricing />
       <Footer />
