@@ -43,7 +43,7 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
           <h2 className="text-lg font-semibold mb-4">
             How many employees does your company have?
           </h2>
-          <div className="space-y-7">
+          <div className="cursor-pointer space-y-7">
             {[
               { label: "51 - 200", percentage: "38%", color: "bg-green-400" },
               { label: "201 - 500", percentage: "23%", color: "bg-green-400" },
@@ -55,6 +55,8 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
                 key={index}
                 className="flex flex-col"
                 variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <div className="flex mb-1">
                   <span className={`text-sm font-medium ${labelColor} w-24`}>
@@ -90,7 +92,7 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
             On average, how many new employees do you hire a year?
           </h2>
           <div className="grid grid-cols-2">
-            <div className="mt-4 flex flex-col justify-center gap-4 text-sm">
+            <div className="cursor-pointer mt-4 flex flex-col justify-center gap-4 text-sm">
               {[
                 "Less than 100",
                 "100-499 new hires",
