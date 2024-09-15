@@ -43,6 +43,7 @@ export default function Home() {
       <Hero isDarkMode={isDarkMode} />
       <WhyUs />
       <SecondSlide />
+      <hr />
       <Dataslide isDarkMode={isDarkMode}/>
       <ResponsiveMarquee />
       <Pricing />

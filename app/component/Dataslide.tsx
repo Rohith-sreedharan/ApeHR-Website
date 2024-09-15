@@ -6,7 +6,7 @@ type HeroProps = {
 };
 
 const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
-  const bgColor = isDarkMode ? "bg-gray-900" : "bg-white";
+  const bgColor = isDarkMode ? "bg-black" : "bg-white";
   const textColor = isDarkMode ? "text-white" : "text-black";
   const labelColor = isDarkMode ? "text-gray-300" : "text-gray-700";
   const barBgColor = isDarkMode ? "bg-gray-700" : "bg-gray-200";
