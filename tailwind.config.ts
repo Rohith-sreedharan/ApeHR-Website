@@ -81,6 +81,13 @@ const config = {
         'gradient-radial-dark': 'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)',
       },
       keyframes1: {
+        glow: {
+          '0%': { 'background-position': '0% 50%' },
+          '100%': { 'background-position': '100% 50%' },
+        },
+        animation: {
+          glow: 'glow 3s infinite',
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
