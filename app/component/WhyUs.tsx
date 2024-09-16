@@ -18,7 +18,7 @@ export default function WhyUs() {
   }, [controls, inView]);
 
   return (
-    <div className="dark:bg-black py-5 px-4 ml-28 sm:px-6 lg:px-8">
+    <div className="dark:bg-black py-5 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ x: "-10%", opacity: 0 }}
@@ -99,4 +99,3 @@ export default function WhyUs() {
     </div>
   );
 }
-
