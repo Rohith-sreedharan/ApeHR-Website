@@ -26,14 +26,9 @@ export default function WhyUs() {
           ref={ref}
           className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 text-start bg-gradient-to-r from-black dark:from-white to-transparent bg-clip-text"
         >
-          <div className="flex">
-            <div>
-              <p className="text-8xl text-slate-300 dark:text-gray-500">05</p>
-            </div>
-            <div className="p-4 py-2">
-              <p className="text-green-500 text-lg">KEY METRICS</p>
-              What did we discover initially?
-            </div>
+          <div className="py-2">
+            <p className="text-green-500 text-lg">KEY METRICS</p>
+            What did we discover initially?
           </div>
         </motion.h2>
 
