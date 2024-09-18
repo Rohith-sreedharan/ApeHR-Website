@@ -30,7 +30,7 @@ const WhyUs: React.FC = () => {
 
     return (
       <div className="flex flex-col items-center text-center mt-32 space-y-2">
-        <svg viewBox="0 0 120 120" className="w-32 h-32">
+        <svg viewBox="0 0 120 120" className="w-80 h-48">
           <defs>
             <linearGradient
               id={`gradient-${percentage}`}
@@ -49,7 +49,7 @@ const WhyUs: React.FC = () => {
             y="50%"
             dominantBaseline="middle"
             textAnchor="middle"
-            className="text-4xl sm:text-5xl"
+            className="text-4xl sm:text-7xl"
             fontWeight="bold"
             fill={`url(#gradient-${percentage})`}
           >
