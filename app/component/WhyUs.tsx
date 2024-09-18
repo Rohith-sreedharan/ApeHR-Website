@@ -1,8 +1,13 @@
+import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 
-export default function WhyUs() {
+interface PercentageDisplayProps {
+  percentage: number;
+  children: React.ReactNode;
+}
+
+const WhyUs: React.FC = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
@@ -16,6 +21,45 @@ export default function WhyUs() {
       });
     }
   }, [controls, inView]);
+
+  const PercentageDisplay: React.FC<PercentageDisplayProps> = ({
+    percentage,
+    children,
+  }) => {
+    const fillPercentage = Math.min(percentage, 60);
+
+    return (
+      <div className="flex flex-col items-center text-center mt-32 space-y-2">
+        <svg viewBox="0 0 120 120" className="w-32 h-32">
+          <defs>
+            <linearGradient
+              id={`gradient-${percentage}`}
+              x1="0%"
+              y1="100%"
+              x2="0%"
+              y2="0%"
+            >
+              <stop offset={`${fillPercentage}%`} stopColor="#10B981" />
+              <stop offset={`${fillPercentage}%`} stopColor="#E5E7EB" />
+              <stop offset="100%" stopColor="#E5E7EB" />
+            </linearGradient>
+          </defs>
+          <text
+            x="50%"
+            y="50%"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            className="text-4xl sm:text-5xl"
+            fontWeight="bold"
+            fill={`url(#gradient-${percentage})`}
+          >
+            {percentage}%
+          </text>
+        </svg>
+        <p className="text-lg font-semibold mt-4">{children}</p>
+      </div>
+    );
+  };
 
   return (
     <div className="dark:bg-black py-5 px-4 sm:px-6 lg:px-8">
@@ -33,64 +77,42 @@ export default function WhyUs() {
         </motion.h2>
 
         <p className="text font-semibold">
-          In order to understand the main issues and needs of the users,we
+          In order to understand the main issues and needs of the users, we
           conducted user interview sessions among
           <br />
           carefully selected recruitment company employees.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
-          {/* First Stat */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={controls}
-            className="flex flex-col items-center text-center mt-32 space-y-2"
-          >
-            <h3 className="text-5xl sm:text-9xl font-bold text-green-500">
-              81%
-            </h3>
-            <p className="text-lg font-semibold mt-4">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={controls}>
+            <PercentageDisplay percentage={81}>
               find it hard to manage incoming resumes.
-            </p>
+            </PercentageDisplay>
           </motion.div>
 
-          {/* Second Stat */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={controls}
-            className="flex flex-col items-center text-start  mt-32 space-y-2"
-          >
-            <h3 className="text-5xl sm:text-9xl font-bold text-green-500">
-              53%
-            </h3>
-            <p className="text-lg font-semibold mt-4">
-              would love to colaborate more with
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={controls}>
+            <PercentageDisplay percentage={53}>
+              would love to collaborate more with
               <br />
               other recruiters in the recruitment process.
-            </p>
+            </PercentageDisplay>
           </motion.div>
 
-          {/* Third Stat */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={controls}
-            className="flex flex-col items-center text-start  mt-32 space-y-2"
-          >
-            <h3 className="text-5xl sm:text-9xl font-bold text-green-500">
-              71%
-            </h3>
-            <p className="text-lg font-semibold mt-4">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={controls}>
+            <PercentageDisplay percentage={71}>
               sees room for recruitment process
               <br />
               improvement.
-            </p>
+            </PercentageDisplay>
           </motion.div>
         </div>
         <p className="font-semibold pt-28 text-start">
           To learn more we carried out the survey among an even broader focus
-          group.Below we present some of the questions with the results.
+          group. Below we present some of the questions with the results.
         </p>
       </div>
     </div>
   );
-}
+};
+
+export default WhyUs;

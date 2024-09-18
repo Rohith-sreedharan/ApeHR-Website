@@ -42,10 +42,12 @@ export default function Home() {
       <Header isDarkMode={isDarkMode} switchTheme={switchTheme} />
       <Hero isDarkMode={isDarkMode} />
       <WhyUs />
-      <SecondSlide />
       <hr />
       <Dataslide isDarkMode={isDarkMode} />
       <ATSSurvey isDarkMode={isDarkMode} />
+      <SecondSlide />
+      
+      
       <ResponsiveMarquee />
       <Pricing />
       <Footer />
