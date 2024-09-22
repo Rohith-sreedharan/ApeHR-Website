@@ -37,7 +37,7 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto sm:mx-8 ">
         {/* Left column */}
         <motion.div variants={itemVariants}>
           <h2 className="text-lg font-semibold mb-4">
@@ -55,8 +55,6 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
                 key={index}
                 className="flex flex-col"
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 <div className="flex mb-1">
                   <span className={`text-sm font-medium ${labelColor} w-24`}>
@@ -87,30 +85,27 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
         </motion.div>
 
         {/* Right column */}
+        {/* Right column */}
         <motion.div variants={itemVariants}>
-          <h2 className="text-lg font-semibold mb-4">
+          <h2 className="text-md sm:text-lg font-semibold mb-2 sm:mb-4">
             On average, how many new employees do you hire a year?
           </h2>
           <div className="grid grid-cols-2">
-            <div className="cursor-pointer mt-4 flex flex-col justify-center gap-4 text-sm">
+            <div className="cursor-pointer flex flex-col justify-center gap-4 text-sm sm:text-md">
               {[
                 "Less than 100",
                 "100-499 new hires",
                 "1,000-9,999 new hires",
-                "10,000+ new hires",
+                "10,000+ hires",
               ].map((text, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <motion.div key={index}>
                   <span
                     className={`inline-block w-3 h-3 ${
                       [
-                        "bg-yellow-400",
-                        "bg-red-400",
-                        "bg-green-400",
-                        "bg-blue-400",
+                        "bg-yellow-500",
+                        "bg-red-500",
+                        "bg-green-500",
+                        "bg-blue-500",
                       ][index]
                     } mr-2`}
                   ></span>
@@ -118,7 +113,9 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
                 </motion.div>
               ))}
             </div>
-            <div className="relative w-60 h-64">
+
+            {/* Responsive circle chart */}
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48">
               <motion.svg
                 viewBox="0 0 36 36"
                 className="w-full h-full"
@@ -131,14 +128,14 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
                   cy="18"
                   r="15.91549430918954"
                   fill="transparent"
-                  stroke={isDarkMode ? "#4B5563" : "#e6e6e6"}
+                  stroke={isDarkMode ? "#374151" : "#d1d5db"}
                   strokeWidth="3.8"
                 ></circle>
                 {[
-                  { color: "#fbbf24", dasharray: "25 100", offset: "0" },
-                  { color: "#f87171", dasharray: "27 100", offset: "-25" },
-                  { color: "#34d399", dasharray: "17 100", offset: "-52" },
-                  { color: "#60a5fa", dasharray: "3 100", offset: "-69" },
+                  { color: "#f59e0b", dasharray: "25 100", offset: "0" },
+                  { color: "#ef4444", dasharray: "27 100", offset: "-25" },
+                  { color: "#10b981", dasharray: "17 100", offset: "-52" },
+                  { color: "#3b82f6", dasharray: "3 100", offset: "-69" },
                 ].map((circle, index) => (
                   <motion.circle
                     key={index}
@@ -163,8 +160,8 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
                 transition={{ duration: 0.5, delay: 1.5 }}
               >
                 <div className="text-center">
-                  <div className="text-3xl font-bold">24%</div>
-                  <div className="text-sm">Less than 100</div>
+                  <div className="text-2xl sm:text-3xl font-bold">24%</div>
+                  <div className="text-xs sm:text-sm">Less than 100</div>
                 </div>
               </motion.div>
             </div>

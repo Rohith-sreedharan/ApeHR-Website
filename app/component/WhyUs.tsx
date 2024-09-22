@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+
 interface PercentageDisplayProps {
   percentage: number;
   children: React.ReactNode;
@@ -27,40 +28,58 @@ const WhyUs: React.FC = () => {
     children,
   }) => {
     const fillPercentage = Math.min(percentage, 60);
-
+  
     return (
       <div className="flex flex-col items-center text-center mt-32 space-y-2">
         <svg viewBox="0 0 120 120" className="w-80 h-48">
           <defs>
-            <linearGradient
-              id={`gradient-${percentage}`}
-              x1="0%"
-              y1="100%"
-              x2="0%"
-              y2="0%"
-            >
+            <linearGradient id={`gradient-${percentage}`} x1="0%" y1="100%" x2="0%" y2="0%">
               <stop offset={`${fillPercentage}%`} stopColor="#10B981" />
               <stop offset={`${fillPercentage}%`} stopColor="#E5E7EB" />
               <stop offset="100%" stopColor="#E5E7EB" />
             </linearGradient>
+            <pattern id={`wave-pattern-${percentage}`} x="0" y="0" width="120" height="10" patternUnits="userSpaceOnUse">
+              <path d="M0 5 Q30 0, 60 5 T120 5" fill="none" stroke="#10B981" strokeWidth="2">
+                <animateTransform
+                  attributeName="transform"
+                  type="translate"
+                  from="0 0"
+                  to="-120 0"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </pattern>
           </defs>
           <text
             x="50%"
             y="50%"
             dominantBaseline="middle"
             textAnchor="middle"
-            className="text-4xl sm:text-7xl"
+            className="text-7xl"
             fontWeight="bold"
             fill={`url(#gradient-${percentage})`}
           >
             {percentage}%
           </text>
+          <g clipPath={`inset(${100 - fillPercentage}% 0 0 0)`}>
+            <text
+              x="50%"
+              y="50%"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              className="text-7xl"
+              fontWeight="bold"
+              fill={`url(#wave-pattern-${percentage})`}
+            >
+              {percentage}%
+            </text>
+          </g>
         </svg>
         <p className="text-lg font-semibold mt-4">{children}</p>
       </div>
     );
   };
-
   return (
     <div className="dark:bg-black py-5 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -86,7 +105,7 @@ const WhyUs: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={controls}>
             <PercentageDisplay percentage={81}>
-              find it hard to manage incoming resumes.
+            Struggling to manage incoming resumes and track applicants?
             </PercentageDisplay>
           </motion.div>
 

@@ -212,7 +212,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-gray-600 dark:text-gray-400 text-sm pt-4">
-          © 2024 Vercel, Inc. All rights reserved.
+        © 2024 ApeHr, springreen. All rights reserved.
         </div>
       </div>
     </footer>

@@ -46,8 +46,6 @@ export default function Home() {
       <Dataslide isDarkMode={isDarkMode} />
       <ATSSurvey isDarkMode={isDarkMode} />
       <SecondSlide />
-      
-      
       <ResponsiveMarquee />
       <Pricing />
       <Footer />

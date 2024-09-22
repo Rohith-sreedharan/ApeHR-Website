@@ -13,7 +13,7 @@ export default function Pricing() {
         </div>
         <div className="space-y-8 pt-6 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg">
+          <BackgroundGradient containerClassName="rounded-lg shadow-lg " isSideCard={true}>
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
               <h3 className="mb-4 text-3xl font-semibold">Starter</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -162,7 +162,7 @@ export default function Pricing() {
             </div>
           </BackgroundGradient>
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg">
+          <BackgroundGradient containerClassName="rounded-lg shadow-lg" isMiddleCard={true}>
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
               <h3 className="mb-4 text-3xl font-semibold">Company</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -312,7 +312,7 @@ export default function Pricing() {
           </BackgroundGradient>
 
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg">
+          <BackgroundGradient containerClassName="rounded-lg shadow-lg" isSideCard={true}>
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
               <h3 className="mb-4 text-3xl font-semibold">Enterprise</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
