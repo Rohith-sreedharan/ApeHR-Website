@@ -15,7 +15,7 @@ const Circle = forwardRef<
       ref={ref}
       className={cn(
         "z-10 flex size-16 items-center justify-center   p-3 ",
-        className
+        className,
       )}
     >
       {children}
@@ -37,7 +37,7 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-6 md:p-10 md:shadow-xl"
+      className="relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg dark:bg-black bg-white p-6 md:p-10"
       ref={containerRef}
     >
       <div className="flex w-full h-full flex-col max-w-lg items-stretch justify-between gap-10">
