@@ -23,7 +23,7 @@ const ATSSurveyResults: React.FC<ATSSurveyResultsProps> = ({ isDarkMode }) => {
         isDarkMode ? "bg-black text-white" : "bg-white text-gray-800"
       }`}
     >
-      <AnimatedBeamDemo  />
+      <AnimatedBeamDemo />
 
       <div className="space-y-6 mr-0 sm:mr-28">
         <h2

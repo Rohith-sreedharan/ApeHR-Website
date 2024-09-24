@@ -106,7 +106,7 @@ const WhyUs: React.FC = () => {
             </PercentageDisplay>
           </motion.div>
         </div>
-        <p className="font-semibold pt-24 pb-4 ml-10">
+        <p className="font-semibold pt-24 pb-4 ml-12">
           To learn more we carried out the survey among an even broader focus
           group. Below we present some of the questions with the results.
         </p>
