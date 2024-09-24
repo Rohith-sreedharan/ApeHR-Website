@@ -32,7 +32,7 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
 
   return (
     <motion.div
-      className={`p-8 ${bgColor} ${textColor}`}
+      className={`p-8 ml-14 items-center ${bgColor} ${textColor}`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}

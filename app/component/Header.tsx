@@ -67,15 +67,15 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
         <div className="flex items-center space-x-4">
           <button
             onClick={switchTheme}
-            className="bg-slate-300 dark:bg-gray-800 p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+            className="bg-white dark:bg-gray-900/50 p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
             aria-label={
               isDarkMode ? "Switch to light mode" : "Switch to dark mode"
             }
           >
-            {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-          <button className="bg-gray-300 hidden md:flex dark:bg-gray-700 py-1.5 px-5 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors">
+          <button className="bg-black hidden md:flex font-semibold dark:bg-white text-white dark:text-black py-1.5 px-6 rounded-md hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors">
             Login
           </button>
           <button className="bg-black font-semibold dark:bg-white text-white dark:text-black px-2 py-1.5 text-xs rounded-md hover:opacity-75 transition-opacity md:px-2 md:py-2 md:text-sm">
