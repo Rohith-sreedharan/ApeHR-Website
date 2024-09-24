@@ -45,12 +45,12 @@ export function AnimatedBeamDemo() {
         <div className="flex flex-row items-center justify-between">
           <div ref={div1Ref}>
             <h1 className="text-lg md:text-xl font-semibold -mt-6 md:-mt-8">
-              Job Listing
+              JOB LISTING
             </h1>
           </div>
           <div ref={div5Ref}>
             <h1 className="text-lg md:text-xl font-semibold -mt-6 md:-mt-8">
-              Applications
+              APPLICATIONS
             </h1>
           </div>
         </div>
@@ -59,25 +59,27 @@ export function AnimatedBeamDemo() {
         <div className="flex flex-row items-center justify-between">
           <div ref={div2Ref}>
             <h1 className="text-lg md:text-xl font-semibold pr-12 md:pr-24">
-              Tracking
+              TRACKING
             </h1>
           </div>
 
           {/* Central logo inside the Circle */}
-          <Circle ref={div4Ref} className="sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
-  <Image
-    src="/apehr-logo.png"
-    alt="apeHr"
-    width={100}
-    height={100}
-    className="rounded-full object-cover"
-  />
-</Circle>
-
+          <Circle
+            ref={div4Ref}
+            className="sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+          >
+            <Image
+              src="/apehr-logo.png"
+              alt="apeHr"
+              width={100}
+              height={100}
+              className="rounded-full object-cover"
+            />
+          </Circle>
 
           <div ref={div6Ref}>
             <h1 className="text-lg md:text-xl font-semibold pl-12 md:pl-32">
-              Onboarding
+              ONBOARDING
             </h1>
           </div>
         </div>
@@ -86,12 +88,12 @@ export function AnimatedBeamDemo() {
         <div className="flex flex-row items-center justify-between">
           <div ref={div3Ref}>
             <h1 className="text-lg md:text-xl font-semibold mt-4 md:mt-10">
-              Dashboard
+              DASHBOARD
             </h1>
           </div>
           <div ref={div7Ref}>
             <h1 className="text-lg md:text-xl font-semibold mt-4 md:mt-10">
-              Administration
+              ADMINISTRATION
             </h1>
           </div>
         </div>

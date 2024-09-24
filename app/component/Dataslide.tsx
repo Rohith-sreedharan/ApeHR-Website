@@ -37,10 +37,10 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-12 mx-auto sm:mx-8 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-3 mx-auto sm:mx-8 ">
         {/* Left column */}
         <motion.div variants={itemVariants}>
-          <h2 className="text-lg font-semibold mb-4">
+          <h2 className="text-3xl font-semibold mb-4">
             How many employees does your company have?
           </h2>
           <div className="cursor-pointer space-y-7">
@@ -87,7 +87,7 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
         {/* Right column */}
         {/* Right column */}
         <motion.div variants={itemVariants}>
-          <h2 className="text-md sm:text-lg font-semibold mb-2 sm:mb-4">
+          <h2 className="text-md sm:text-lg lg:text-3xl font-semibold mb-2 sm:mb-4">
             On average, how many new employees do you hire a year?
           </h2>
           <div className="grid grid-cols-2">

@@ -19,7 +19,7 @@ const ATSSurveyResults: React.FC<ATSSurveyResultsProps> = ({ isDarkMode }) => {
 
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 sm:p-6 lg:p-12 ${
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 p-2 sm:p-2 lg:p-4 ${
         isDarkMode ? "bg-black text-white" : "bg-white text-gray-800"
       }`}
     >
