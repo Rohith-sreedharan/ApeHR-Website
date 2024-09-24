@@ -1,10 +1,31 @@
 import React, { FC } from "react";
 import { motion } from "framer-motion";
-import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import Particles from "@/components/magicui/particles";
+import { ChevronRight } from "lucide-react"; // Importing for the updated AnimatedGradientTextDemo
+import { cn } from "@/lib/utils"; // Importing for the updated AnimatedGradientTextDemo
+import AnimatedGradientText from "@/components/magicui/animated-gradient-text"; // Importing for the updated AnimatedGradientTextDemo
 
 type HeroProps = {
   isDarkMode: boolean;
+};
+
+const AnimatedGradientTextDemo = () => {
+  return (
+    <div className="z-10 flex min-h-[16rem] items-center justify-center">
+      <AnimatedGradientText>
+        🎉
+        <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:200%_100%] animate-gradient" />
+        <span
+          className={cn(
+            `inline text-[100%] animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+          )}
+        >
+         Introducing Features Section
+        </span>
+        <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+      </AnimatedGradientText>
+    </div>
+  );
 };
 
 const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
@@ -24,9 +45,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
         className="mb-8 text-center"
       >
         <a href="#">
-          <AnimatedGradientText className="text-black dark:text-white text-sm sm:text-base">
-            <span>🎉 Introducing Features Section</span>
-          </AnimatedGradientText>
+          <AnimatedGradientTextDemo /> {/* Updated component call */}
         </a>
       </motion.div>
 
@@ -37,7 +56,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="z-50 text-center max-w-4xl"
       >
-        <h1 className="text-3xl sm:text-4xl tracking-wide leading-relaxed  md:text-5xl text-black dark:text-white font-bold mb-6">
+        <h1 className="text-3xl sm:text-4xl tracking-wide leading-relaxed md:text-5xl text-black dark:text-white font-bold mb-6">
           From Manual to Automatic Revolutionizing HR One Click at a Time
         </h1>
         <p className="text-gray-400 mb-8 text-sm sm:text-base">
@@ -54,14 +73,14 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="dark:bg-white bg-purple-600 text-white dark:text-black px-6 py-3 rounded-full font-semibold text-sm sm:text-base"
+            className="dark:bg-white bg-purple-600 text-white dark:text-black px-6 py-3 rounded-lg font-semibold text-sm sm:text-base"
           >
             Browse Templates ›
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base"
+            className="bg-purple-600 text-white px-6 py-3 rounded-md font-semibold text-sm sm:text-base"
           >
             Get Magic UI Pro ›
           </motion.button>

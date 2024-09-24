@@ -19,10 +19,20 @@ const config = {
     },
     extend: {
       animation: {
+        gradient: "gradient 8s linear infinite",
+      },
+      keyframes: {
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
+      },
+      animation1: {
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
-      keyframes: {
+      keyframes1: {
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
@@ -80,7 +90,7 @@ const config = {
         'gradient-radial-light': 'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%)',
         'gradient-radial-dark': 'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)',
       },
-      keyframes1: {
+      keyframes2: {
         glow: {
           '0%': { 'background-position': '0% 50%' },
           '100%': { 'background-position': '100% 50%' },
@@ -102,7 +112,7 @@ const config = {
           },
         },
       },
-      animation1: {
+      animation2: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         gradient2: "gradient2 8s linear infinite",

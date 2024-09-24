@@ -21,7 +21,7 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">
-          <img src="/icon.png" alt="ApeHr" className="w-8 h-8" />
+          <img src="/icon.png" alt="ApeHr" className="w-16 h-16" />
           <span className="text-lg font-semibold">ApeHr</span>
           {/* Navigation */}
           <nav className="hidden md:flex space-x-5 px-4">
