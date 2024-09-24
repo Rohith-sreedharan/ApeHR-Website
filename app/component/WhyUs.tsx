@@ -39,7 +39,7 @@ const WhyUs: React.FC = () => {
               x2="0%"
               y2="0%"
             >
-              <stop offset={`${fillPercentage}%`} stopColor="#10B981" />
+              <stop offset={`${fillPercentage}%`} stopColor="#805ad5" />
               <stop offset={`${fillPercentage}%`} stopColor="#E5E7EB" />
               <stop offset="100%" stopColor="#E5E7EB" />
             </linearGradient>
@@ -71,7 +71,7 @@ const WhyUs: React.FC = () => {
           className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-start bg-gradient-to-r from-black dark:from-white to-transparent bg-clip-text"
         >
           <div className="py-2">
-            <p className="text-green-500 text-lg">KEY METRICS</p>
+            <p className="text-purple-600 text-lg">KEY METRICS</p>
             What did we discover initially?
           </div>
         </motion.h2>
