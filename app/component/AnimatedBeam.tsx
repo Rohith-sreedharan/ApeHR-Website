@@ -64,15 +64,16 @@ export function AnimatedBeamDemo() {
           </div>
 
           {/* Central logo inside the Circle */}
-          <Circle ref={div4Ref}>
-            <Image
-              src="/apehr-logo.png"
-              alt="apeHr"
-              width={100}
-              height={100}
-              className="rounded-full object-cover"
-            />
-          </Circle>
+          <Circle ref={div4Ref} className="sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
+  <Image
+    src="/apehr-logo.png"
+    alt="apeHr"
+    width={100}
+    height={100}
+    className="rounded-full object-cover"
+  />
+</Circle>
+
 
           <div ref={div6Ref}>
             <h1 className="text-lg md:text-xl font-semibold pl-12 md:pl-32">
