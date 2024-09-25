@@ -119,7 +119,7 @@ const SecondSlide = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="card flex gap-4 md:gap-8 bg-gray-200 dark:bg-gray-800/25 p-4 md:p-6 rounded-lg shadow-lg w-full sm:w-4/5 md:w-3/5"
+              className="card flex gap-4 dark:border-2 md:gap-8 bg-gray-200 dark:bg-gray-800/25 p-4 md:p-6 rounded-lg shadow-lg w-full sm:w-4/5 md:w-3/5"
             >
               <div className="flex items-center mb-4">
                 {index === 0 && <Tangent size="1.5rem" />}
