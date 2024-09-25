@@ -45,12 +45,12 @@ export function AnimatedBeamDemo() {
         <div className="flex flex-row items-center justify-between">
           <div ref={div1Ref}>
             <h1 className="text-lg md:text-xl font-semibold -mt-6 md:-mt-8">
-              JOB LISTING
+              job listing
             </h1>
           </div>
           <div ref={div5Ref}>
             <h1 className="text-lg md:text-xl font-semibold -mt-6 md:-mt-8">
-              APPLICATIONS
+              applications
             </h1>
           </div>
         </div>
@@ -59,7 +59,7 @@ export function AnimatedBeamDemo() {
         <div className="flex flex-row items-center justify-between">
           <div ref={div2Ref}>
             <h1 className="text-lg md:text-xl font-semibold pr-12 md:pr-24">
-              TRACKING
+              tracking
             </h1>
           </div>
 
@@ -79,7 +79,7 @@ export function AnimatedBeamDemo() {
 
           <div ref={div6Ref}>
             <h1 className="text-lg md:text-xl font-semibold pl-12 md:pl-32">
-              ONBOARDING
+              onboarding
             </h1>
           </div>
         </div>
@@ -88,12 +88,12 @@ export function AnimatedBeamDemo() {
         <div className="flex flex-row items-center justify-between">
           <div ref={div3Ref}>
             <h1 className="text-lg md:text-xl font-semibold mt-4 md:mt-10">
-              DASHBOARD
+              dashboard
             </h1>
           </div>
           <div ref={div7Ref}>
             <h1 className="text-lg md:text-xl font-semibold mt-4 md:mt-10">
-              ADMINISTRATION
+              administration
             </h1>
           </div>
         </div>
