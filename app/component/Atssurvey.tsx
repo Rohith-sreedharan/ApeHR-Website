@@ -59,7 +59,7 @@ const ATSSurveyResults: React.FC<ATSSurveyResultsProps> = ({ isDarkMode }) => {
                 }`}
               >
                 <div
-                  className="bg-green-400 rounded-full h-full"
+                  className="bg-purple-600 rounded-full h-full"
                   style={{ width: `${benefit.percentage}%` }}
                 ></div>
               </div>

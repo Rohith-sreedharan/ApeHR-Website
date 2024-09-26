@@ -29,8 +29,8 @@ const WhyUs: React.FC = () => {
     const fillPercentage = Math.min(percentage, 60);
 
     return (
-      <div className="flex flex-col items-center text-center mt-12 space-y-2">
-        <svg viewBox="0 0 120 120" className="w-80 h-48">
+      <div className="flex flex-col mt-12 space-y-2">
+        <svg viewBox="0 0 120 120" className="w-64 h-48">
           <defs>
             <linearGradient
               id={`gradient-${percentage}`}
@@ -83,7 +83,7 @@ const WhyUs: React.FC = () => {
           carefully selected recruitment company employees.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-start lg:gap-16">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={controls}>
             <PercentageDisplay percentage={81}>
               Find it hard to manage
@@ -108,7 +108,7 @@ const WhyUs: React.FC = () => {
             </PercentageDisplay>
           </motion.div>
         </div>
-        <p className="font-semibold pt-16 pb-4 ml-3">
+        <p className="font-semibold pt-16 pb-4">
           To learn more we carried out the survey among an even broader focus
           group. Below we present some of the questions with the results.
         </p>

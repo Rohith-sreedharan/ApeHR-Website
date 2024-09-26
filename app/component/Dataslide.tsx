@@ -45,11 +45,19 @@ const Dataslide: React.FC<HeroProps> = ({ isDarkMode }) => {
           </h2>
           <div className="cursor-pointer space-y-7">
             {[
-              { label: "51 - 200", percentage: "38%", color: "bg-green-400" },
-              { label: "201 - 500", percentage: "23%", color: "bg-green-400" },
-              { label: "11 - 50", percentage: "16%", color: "bg-green-400" },
-              { label: "501 - 1000", percentage: "12%", color: "bg-green-400" },
-              { label: "1001 - 5000", percentage: "8%", color: "bg-green-400" },
+              { label: "51 - 200", percentage: "38%", color: "bg-purple-600" },
+              { label: "201 - 500", percentage: "23%", color: "bg-purple-600" },
+              { label: "11 - 50", percentage: "16%", color: "bg-purple-600" },
+              {
+                label: "501 - 1000",
+                percentage: "12%",
+                color: "bg-purple-600",
+              },
+              {
+                label: "1001 - 5000",
+                percentage: "8%",
+                color: "bg-purple-600",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
