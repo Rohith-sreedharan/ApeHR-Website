@@ -16,13 +16,18 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
   return (
     <header
       className="dark:bg-gray-900/50 dark:text-white sticky top-0 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-300 dark:border-gray-600 z-50"
-      style={{ zIndex: 9999 }}
+      style={{ zIndex: 9999,  height: "90px" }}
     >
       <div className="mx-5 ml-12 px-4 py-3 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-2">
-          <img src="/icon.png" alt="ApeHr" className="w-16 h-16" />
-          <span className="text-lg font-semibold">ApeHr</span>
+        <img
+        src="/apehr.png"
+        alt="ApeHr"
+        className="w-20 h-20" // You can change w-20 h-20 to any size as needed
+         // Restrict the logo's height so it doesn't stretch the navbar
+      />
+          {/* <span className="text-lg font-semibold">ApeHr</span> */}
           {/* Navigation */}
           <nav className="hidden md:flex space-x-5 px-4">
             {["Templates", "Sections", "Pricing", "Roadmap", "Discord"].map(
