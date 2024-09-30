@@ -12,6 +12,7 @@ import WhyUs from "./component/WhyUs";
 import ResponsiveMarquee from "./component/ResponsiveMarquee";
 import Dataslide from "./component/Dataslide";
 import ATSSurvey from "./component/Atssurvey";
+import Companies from "./component/Companies";
 const THEME_KEY = "theme";
 
 export default function Home() {
@@ -47,6 +48,9 @@ export default function Home() {
       <ATSSurvey isDarkMode={isDarkMode} />
       <SecondSlide />
       <ResponsiveMarquee />
+      <div>
+        <Companies />
+      </div>
       <Pricing />
       <Footer />
       {/* <ChatAiWidget

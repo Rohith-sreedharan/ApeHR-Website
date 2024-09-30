@@ -1,5 +1,7 @@
 import React from "react";
 import { AnimatedBeamDemo } from "./AnimatedBeam";
+import AnimatedBeamMultipleOutputDemo from "./AnimatedMultiple";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 interface ATSSurveyResultsProps {
   isDarkMode: boolean;
@@ -23,7 +25,11 @@ const ATSSurveyResults: React.FC<ATSSurveyResultsProps> = ({ isDarkMode }) => {
         isDarkMode ? "bg-black text-white" : "bg-white text-gray-800"
       }`}
     >
-      <AnimatedBeamDemo />
+      <div className="relative dark:bg-black flex flex-col mx-16 items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+        <AnimatedBeamMultipleOutputDemo />
+
+        <BorderBeam size={250} duration={12} delay={9} className="" />
+      </div>
 
       <div className="space-y-6 mr-0 sm:mr-28">
         <h2

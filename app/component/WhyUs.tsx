@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 interface PercentageDisplayProps {
   percentage: number;
@@ -27,7 +28,7 @@ const WhyUs: React.FC = () => {
     children,
   }) => {
     const fillPercentage = Math.min(percentage, 60);
-  
+
     return (
       <div className="flex flex-col items-center mt-12 space-y-2">
         <svg viewBox="0 0 120 120" className="w-64 h-48">
@@ -60,7 +61,6 @@ const WhyUs: React.FC = () => {
       </div>
     );
   };
-  
 
   return (
     <div className="dark:bg-black py-5 px-4 sm:px-6 lg:px-8">
@@ -85,50 +85,56 @@ const WhyUs: React.FC = () => {
         </p>
 
         <div className="flex flex-col items-center">
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 w-full text-center">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={controls}
-      className="flex justify-center"
-    >
-      <PercentageDisplay percentage={81}>
-        Find it hard to manage
-        <br />
-        incoming resumes.
-      </PercentageDisplay>
-    </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 w-full text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              className="flex justify-center"
+            >
+              <PercentageDisplay percentage={85}>
+                Find it hard to manage
+                <br />
+                incoming resumes.
+              </PercentageDisplay>
+            </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={controls}
-      className="flex justify-center"
-    >
-      <PercentageDisplay percentage={53}>
-        Would love to collaborate more with
-        <br />
-        other recruiters in the recruitment process.
-      </PercentageDisplay>
-    </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              className="flex justify-center"
+            >
+              <PercentageDisplay percentage={59}>
+                Would love to collaborate more with
+                <br />
+                other recruiters in the recruitment process.
+              </PercentageDisplay>
+            </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={controls}
-      className="flex justify-center"
-    >
-      <PercentageDisplay percentage={71}>
-        Sees room for recruitment process
-        <br />
-        improvement.
-      </PercentageDisplay>
-    </motion.div>
-  </div>
-</div>
-
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              className="flex justify-center"
+            >
+              <PercentageDisplay percentage={76}>
+                Sees room for recruitment process
+                <br />
+                improvement.
+              </PercentageDisplay>
+            </motion.div>
+          </div>
+        </div>
       </div>
-      <p className="font-semibold pt-16 pb-4 flex mx-0 sm:mx-16">
-          To learn more we carried out the survey among an even broader focus
-          group. Below we present some of the questions with the results.
-        </p>
+      <p className="font-semibold pt-16 pb-4 mx-0 sm:mx-16 flex">
+        To
+        <Link href="/" className="text-purple-600  mx-1">
+          learn more
+        </Link>
+        , we conducted a survey with a broader focus group. Below are some of
+        the key questions and results.
+      </p>
+      <div className="flex font-semibold  pb-4 mx-0 sm:mx-16">
+        <p className="text-[12px]"> say that 2023-2024 we conducted survey and to learn more about survey email us at compalince@springreen.in</p>
+      </div>
     </div>
   );
 };

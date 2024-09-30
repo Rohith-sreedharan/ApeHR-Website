@@ -17,10 +17,10 @@ const AnimatedGradientTextDemo = () => {
         <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:200%_100%] animate-gradient" />
         <span
           className={cn(
-            `inline text-[100%] animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+            `inline text-[100%] animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
           )}
         >
-          Introducing Features Section
+          Introducing God Level ATC
         </span>
         <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </AnimatedGradientText>
@@ -75,14 +75,14 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
             whileTap={{ scale: 0.95 }}
             className="dark:bg-white bg-purple-600 text-white dark:text-black px-6 py-3 rounded-lg font-semibold text-sm sm:text-base"
           >
-            Browse Templates ›
+            Explore ApeHr ›
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-purple-600 text-white px-6 py-3 rounded-md font-semibold text-sm sm:text-base"
           >
-            Get Magic UI Pro ›
+            Get Started ›
           </motion.button>
         </motion.div>
 

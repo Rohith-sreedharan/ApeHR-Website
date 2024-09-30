@@ -7,6 +7,8 @@ import {
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { AnimatedBeamDemo } from "./AnimatedBeam";
+import BorderBeamDemo from "./Borderbeam";
 
 const SecondSlide = () => {
   const controls = useAnimation();
@@ -142,23 +144,8 @@ const SecondSlide = () => {
         </motion.div>
       </div>
 
-      <div className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-auto">
-        <motion.img
-          className="block sm:absolute z-10 border-2 shadow-lg border-gray-300 dark:border-gray-800 rounded-lg right-0 lg:-right-12 top-0 lg:top-20 w-full sm:w-2/3 md:w-1/2 lg:w-full max-w-xl"
-          src="/chart.jpg"
-          alt="Chart"
-          animate={{
-            y: [0, 10, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          }}
-          srcSet="/chart-small.jpg 300w, /chart-medium.jpg 600w, /chart.jpg 1200w"
-          sizes="(max-width: 640px) 75vw, (max-width: 768px) 66vw, (max-width: 1024px) 50vw, 100vw"
-        />
+      <div className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-auto mt-20 md:mt-32">
+        <BorderBeamDemo />
       </div>
     </div>
   );

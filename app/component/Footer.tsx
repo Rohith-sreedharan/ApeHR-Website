@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -20,7 +21,7 @@ const Footer = () => {
                 </span>
               </a>
               <p className="mt-4 max-w-xs text-gray-600 dark:text-gray-400 text-sm">
-                Identify and fix slow code–in minutes, not months.
+                A new generation platform for your recruitment processes
               </p>
             </div>
             <div className="max-w-xs ">
@@ -57,7 +58,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Docs
+                    Feautures
                   </a>
                 </li>
                 <li>
@@ -65,7 +66,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Learn
+                    Pricing
                   </a>
                 </li>
                 <li>
@@ -73,7 +74,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Showcase
+                    Documentation
                   </a>
                 </li>
                 <li>
@@ -81,7 +82,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Blog
+                    Case Study
                   </a>
                 </li>
                 <li>
@@ -89,44 +90,20 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Analytics
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    Next.js Conf
+                    Support
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-lg">More</h3>
+              <h3 className="font-semibold mb-4 text-lg">Company</h3>
               <ul className="space-y-3">
                 <li>
                   <a
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Next.js Commerce
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    Contact Sales
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    GitHub
+                    About Us
                   </a>
                 </li>
                 <li>
@@ -142,28 +119,28 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Telemetry
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
                     Governance
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    Learn
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-lg">About Vercel</h3>
+              <h3 className="font-semibold mb-4 text-lg">Resources</h3>
               <ul className="space-y-3">
                 <li>
                   <a
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Next.js + Vercel
+                    Community
                   </a>
                 </li>
                 <li>
@@ -171,7 +148,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Open Source Software
+                    Terms & Conditions
                   </a>
                 </li>
                 <li>
@@ -179,28 +156,52 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    X
+                    Status
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-lg">Legal</h3>
+              <h3 className="font-semibold mb-4 text-lg">Social</h3>
               <ul className="space-y-3">
                 <li>
                   <a
                     href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    Privacy Policy
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    Glassdoor
                   </a>
                 </li>
               </ul>
@@ -212,7 +213,8 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-gray-600 dark:text-gray-400 text-sm pt-4">
-        © 2024 ApeHr, springreen. All rights reserved.
+          © 2024 ApeHr,<Link href="https://springreen.in/"> springreen.</Link>{" "}
+          All rights reserved.
         </div>
       </div>
     </footer>
