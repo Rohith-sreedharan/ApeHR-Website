@@ -75,14 +75,14 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
             whileTap={{ scale: 0.95 }}
             className="dark:bg-white bg-purple-600 text-white dark:text-black px-6 py-3 rounded-lg font-semibold text-sm sm:text-base"
           >
-            Explore ApeHr ›
+            Get ApeHr Pro ›
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-purple-600 text-white px-6 py-3 rounded-md font-semibold text-sm sm:text-base"
           >
-            Get Started ›
+            Start Free Trial ›
           </motion.button>
         </motion.div>
 

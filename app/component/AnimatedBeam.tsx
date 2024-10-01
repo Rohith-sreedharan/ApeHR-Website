@@ -66,7 +66,7 @@ export function AnimatedBeamDemo() {
           {/* Central logo inside the Circle */}
           <Circle
             ref={div4Ref}
-            className="sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+            className="size-20 z-10 flex bg-white border-2 items-center justify-center rounded-full  p-1 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]"
           >
             <Image
               src="/apehr-logo.png"
