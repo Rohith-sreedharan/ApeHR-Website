@@ -27,7 +27,7 @@ const WhyUs: React.FC = () => {
     percentage,
     children,
   }) => {
-    const fillPercentage = Math.min(percentage, 60);
+    const fillPercentage = Math.min(percentage, 59);
 
     return (
       <div className="flex flex-col items-center mt-12 space-y-2">
@@ -133,7 +133,7 @@ const WhyUs: React.FC = () => {
         the key questions and results.
       </p>
       <div className="flex font-semibold  pb-4 mx-0 sm:mx-16">
-        <p className="text-[12px]"> say that 2023-2024 we conducted survey and to learn more about survey email us at compalince@springreen.in</p>
+        <p className="text-[12px]"> In 2023-2024, we conducted a detailed survey. To learn more about it, email us at compliance@springreen.in</p>
       </div>
     </div>
   );
