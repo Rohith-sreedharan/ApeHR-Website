@@ -128,7 +128,7 @@ const WhyUs: React.FC = () => {
         We did survey, across india for this product, in the year 2023 - 2024
       </p>
       <div className="flex font-semibold  pb-4 mx-0 sm:mx-16">
-        <p className="text-[12px]">*To learn more about this <span className="text-purple-500">click here</span> and learn more about suvey contact us compliance@springreen.in</p>
+        <p className="text-[12px]">*To learn more about this <a href="mailto:compliance@springreen.in" className="text-purple-500">click here</a> and learn more about suvey contact us compliance@springreen.in</p>
       </div>
     </div>
   );
