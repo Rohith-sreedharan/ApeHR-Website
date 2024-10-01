@@ -9,6 +9,14 @@ type HeroProps = {
   isDarkMode: boolean;
 };
 
+const imageUrls = [
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768260/vypeubxsion1vwqai1ya.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768275/rjqgb1k7xof7rs3z7r9i.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768268/f6ako3vmumk5pn8mmwyj.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768243/pbv9yv3uxad6k7yhy37p.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768249/aiai9zngbgjuwrs7lgij.jpg",
+];
+
 const AnimatedGradientTextDemo = () => {
   return (
     <div className="z-10 flex min-h-[10rem] items-center justify-center">
@@ -17,7 +25,7 @@ const AnimatedGradientTextDemo = () => {
         <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:200%_100%] animate-gradient" />
         <span
           className={cn(
-            `inline text-[100%] animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+            `inline text-[100%] animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
           )}
         >
           Introducing God Level ATC
@@ -94,15 +102,15 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
           className="flex flex-col sm:flex-row items-center justify-center mb-8 space-y-4 sm:space-y-0"
         >
           <div className="flex -space-x-3 sm:-space-x-5 mr-0 sm:mr-4 mb-2 sm:mb-0">
-            {[...Array(5)].map((_, i) => (
+            {imageUrls.map((url, i) => (
               <motion.img
                 key={i}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 * i }}
-                className="w-8 h-8 sm:w-11 sm:h-11 rounded-full border-2 dark:border-white border-black"
-                src={`https://i.pravatar.cc/150?img=${i + 1}`}
-                alt="User avatar"
+                className="w-8 h-8 sm:w-11 sm:h-10 rounded-full border-2 dark:border-white border-black"
+                src={url}
+                alt={`User Avatar ${i + 1}`}
               />
             ))}
           </div>
