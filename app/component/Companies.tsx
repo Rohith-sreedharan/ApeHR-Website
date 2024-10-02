@@ -1,3 +1,5 @@
+import Marquee from "@/components/magicui/marquee";
+
 const companies = [
   "Google",
   "Microsoft",
@@ -18,7 +20,7 @@ export default function Companies() {
             TRUSTED BY LEADING TEAMS
           </h3>
           <div className="relative mt-6">
-            <div className="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4 xl:grid-cols-8 xl:gap-4">
+              <Marquee pauseOnHover className="[--duration:20s]">
               {companies.map((logo, idx) => (
                 <img
                   key={idx}
@@ -27,8 +29,8 @@ export default function Companies() {
                   alt={logo}
                 />
               ))}
+              </Marquee>
             </div>
-          </div>
         </div>
       </div>
     </section>

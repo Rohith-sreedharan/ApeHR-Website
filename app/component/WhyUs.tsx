@@ -27,7 +27,7 @@ const WhyUs: React.FC = () => {
     percentage,
     children,
   }) => {
-    const fillPercentage = percentage - 10
+    const fillPercentage = Math.min(percentage, 59);
 
     return (
       <div className="flex flex-col items-center mt-12 space-y-2">
@@ -125,14 +125,15 @@ const WhyUs: React.FC = () => {
         </div>
       </div>
       <p className="font-semibold pt-16 pb-4 mx-0 sm:mx-16 flex">
-        We did survey, across india for this product, in the year 2023 - 2024
+        To
+        <Link href="/" className="text-purple-600  mx-1">
+          learn more
+        </Link>
+        , we conducted a survey with a broader focus group. Below are some of
+        the key questions and results.
       </p>
       <div className="flex font-semibold  pb-4 mx-0 sm:mx-16">
-<<<<<<< HEAD
         <p className="text-[12px]"> In 2023-2024, we conducted a detailed survey. To learn more about it, email us at compliance@springreen.in</p>
-=======
-        <p className="text-[12px]">*To learn more about this <a href="mailto:compliance@springreen.in" className="text-purple-500">click here</a> and learn more about suvey contact us compliance@springreen.in</p>
->>>>>>> d9c889e09d7c23148baeadeafd021b6f94b28f24
       </div>
     </div>
   );
