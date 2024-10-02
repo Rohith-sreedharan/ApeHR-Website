@@ -84,7 +84,7 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
             Login
           </button>
           <button className="bg-black font-semibold dark:bg-white text-white dark:text-black px-2 py-1.5 text-xs rounded-md hover:opacity-75 transition-opacity md:px-2 md:py-2 md:text-sm">
-            Get ApeHR Pro
+            Start free trail
           </button>
         </div>
       </div>
