@@ -10,11 +10,12 @@ type HeroProps = {
 };
 
 const imageUrls = [
-  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768260/vypeubxsion1vwqai1ya.jpg",
-  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768275/rjqgb1k7xof7rs3z7r9i.jpg",
-  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768268/f6ako3vmumk5pn8mmwyj.jpg",
-  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768243/pbv9yv3uxad6k7yhy37p.jpg",
   "https://res.cloudinary.com/djnvtmphi/image/upload/v1727768249/aiai9zngbgjuwrs7lgij.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727863237/ojumhgv7lxkkobee40ks.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727863249/sp7jawgvqvkfxjekyud4.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727863434/rzhpbrb4mvjufwpssrgh.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727863434/rzhpbrb4mvjufwpssrgh.jpg",
+  "https://res.cloudinary.com/djnvtmphi/image/upload/v1727863524/dndvnenryumaatzokhke.jpg",
 ];
 
 const AnimatedGradientTextDemo = () => {
