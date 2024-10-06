@@ -27,7 +27,7 @@ const WhyUs: React.FC = () => {
     percentage,
     children,
   }) => {
-    const fillPercentage = Math.min(percentage - 10);
+    const fillPercentage = percentage * 0.87
 
     return (
       <div className="flex flex-col items-center mt-12 space-y-2">

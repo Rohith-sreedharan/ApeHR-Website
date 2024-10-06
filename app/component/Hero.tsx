@@ -7,6 +7,7 @@ import AnimatedGradientText from "@/components/magicui/animated-gradient-text"; 
 
 type HeroProps = {
   isDarkMode: boolean;
+  setDisplayCountdown: (value: boolean) => void;
 };
 
 const imageUrls = [
@@ -29,7 +30,7 @@ const AnimatedGradientTextDemo = () => {
             `inline text-[100%] animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
           )}
         >
-          Introducing Professional Level ATC
+          Introducing Professional ATC
         </span>
         <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </AnimatedGradientText>
@@ -37,7 +38,7 @@ const AnimatedGradientTextDemo = () => {
   );
 };
 
-const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
+const LandingPage: FC<HeroProps> = ({ isDarkMode, setDisplayCountdown }) => {
   return (
     <div className="bg-white relative dark:bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Top banner */}
@@ -90,6 +91,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-purple-600 text-white px-6 py-3 rounded-md font-semibold text-sm sm:text-base"
+            onClick={() => setDisplayCountdown(true)}
           >
             Start Free Trial ›
           </motion.button>
@@ -135,7 +137,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode }) => {
               </span>
             </div>
             <p className="text-xs text-black dark:text-white font-bold">
-              1,000+ companies love using us
+              1,000+ companies will love using us
             </p>
           </div>
         </motion.div>

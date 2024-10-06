@@ -1,3 +1,4 @@
+import { Infinity } from "lucide-react";
 import TextGenerator from "./text-gen";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 export default function Pricing() {
@@ -13,9 +14,9 @@ export default function Pricing() {
         </div>
         <div className="space-y-8 pt-6 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg " isSideCard={true}>
+          <BackgroundGradient containerClassName="rounded-lg shadow-lg opacity-70 hover:opacity-100 " isSideCard={true}>
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
-              <h3 className="mb-4 text-3xl font-semibold">Starter</h3>
+              <h3 className="mb-4 text-3xl font-semibold">Basic</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 Best option for personal use & for your next project.
               </p>
@@ -30,8 +31,8 @@ export default function Pricing() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  className="lucide lucide-indian-rupee w-10 h-10"
-                  style={{ height: "60px", width: "60px" }}
+                  className="lucide lucide-indian-rupee w-8 h-8"
+                  style={{ height: "40px", width: "40px" }}
                 >
                   <path d="M6 3h12" />
                   <path d="M6 8h12" />
@@ -39,8 +40,8 @@ export default function Pricing() {
                   <path d="M6 13h3" />
                   <path d="M9 13c6.667 0 6.667-10 0-10" />
                 </svg>
-                <span className="mr-2 text-7xl font-extrabold">199</span>
-                <span className="text-gray-500 dark:text-gray-400">/month</span>
+                <span className="mr-2 text-6xl font-extrabold">11400</span>
+                <span className="text-gray-500 dark:text-gray-400">/year</span>
               </div>
               <p className="text-start pb-4 font-semibold">Whats Included:</p>
               <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-200/30 to-neutral-200/0" />
@@ -60,7 +61,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>Individual configuration</span>
+                  <span>Number of job posts:&nbsp;<span className=" font-semibold">3</span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -76,7 +77,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>No setup, or hidden fees</span>
+                  <span>Candidate applications:&nbsp;<span className="font-semibold">20</span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -93,8 +94,8 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Team size:{" "}
-                    <span className="font-semibold">1 developer</span>
+                    Team members:{" "}
+                    <span className="font-semibold">20</span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -112,8 +113,27 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Premium support:{" "}
-                    <span className="font-semibold">6 months</span>
+                    Branding: Custom domain, Brand description page
+                  </span>
+                </li>
+                
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Email, Sms, Phone Reminders
+                    
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -131,8 +151,43 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Free updates:{" "}
-                    <span className="font-semibold">6 months</span>
+                    Zoom & Google Meet Integration but no aptitude tests
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Support(24/7): Email
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Dedicated Career Page
                   </span>
                 </li>
               </ul>
@@ -164,7 +219,7 @@ export default function Pricing() {
           {/* <!-- Pricing Card --> */}
           <BackgroundGradient containerClassName="rounded-lg shadow-lg" isMiddleCard={true}>
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
-              <h3 className="mb-4 text-3xl font-semibold">Company</h3>
+              <h3 className="mb-4 text-3xl font-semibold">Pro</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 Relevant for multiple users, extended & premium support.
               </p>
@@ -179,8 +234,8 @@ export default function Pricing() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  className="lucide lucide-indian-rupee w-10 h-10"
-                  style={{ height: "60px", width: "60px" }}
+                  className="lucide lucide-indian-rupee w-8 h-8"
+                  style={{ height: "40px", width: "40px" }}
                 >
                   <path d="M6 3h12" />
                   <path d="M6 8h12" />
@@ -188,14 +243,14 @@ export default function Pricing() {
                   <path d="M6 13h3" />
                   <path d="M9 13c6.667 0 6.667-10 0-10" />
                 </svg>
-                <span className="mr-2 text-7xl font-extrabold">499</span>
-                <span className="text-gray-500 dark:text-gray-400">/month</span>
+                <span className="mr-2 text-6xl font-extrabold">27000</span>
+                <span className="text-gray-500 dark:text-gray-400">/year</span>
               </div>
               <p className="text-start pb-4 font-semibold">Whats Included:</p>
               <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-200/30 to-neutral-200/0" />
               {/* <!-- List --> */}
               <ul role="list" className="mb-8 pt-4 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
+              <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
@@ -209,7 +264,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>Individual configuration</span>
+                  <span className="flex">Number of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -225,7 +280,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>No setup, or hidden fees</span>
+                  <span className="flex">Candidate applications:&nbsp;<span className="font-semibold"><Infinity /></span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -242,8 +297,8 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Team size:{" "}
-                    <span className="font-semibold">10 developers</span>
+                    Team members:{" "}
+                    <span className="font-semibold">50</span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -261,8 +316,26 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Premium support:{" "}
-                    <span className="font-semibold">24 months</span>
+                    Branding: Previous features + SSO, Whitelabelling, Remove Footer
+                  </span>
+                </li>
+                
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Previous Reminders + Follow Up
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -280,8 +353,43 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Free updates:{" "}
-                    <span className="font-semibold">24 months</span>
+                    Zoom & Google Meet Integration with aptitude tests
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Support(24/7): Email, Phone, Virtual
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Dedicated Career Page
                   </span>
                 </li>
               </ul>
@@ -312,40 +420,20 @@ export default function Pricing() {
           </BackgroundGradient>
 
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg" isSideCard={true}>
+          <BackgroundGradient containerClassName="rounded-lg shadow-lg opacity-70 hover:opacity-100" isSideCard={true}>
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
               <h3 className="mb-4 text-3xl font-semibold">Enterprise</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 Best for large scale uses and extended redistribution rights.
               </p>
               <div className="flex justify-center items-baseline my-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-indian-rupee"
-                  style={{ height: "60px", width: "60px" }}
-                >
-                  <path d="M6 3h12" />
-                  <path d="M6 8h12" />
-                  <path d="m6 13 8.5 8" />
-                  <path d="M6 13h3" />
-                  <path d="M9 13c6.667 0 6.667-10 0-10" />
-                </svg>
-                <span className="mr-2 text-7xl font-extrabold">999</span>
-                <span className="text-gray-500 dark:text-gray-400">/month</span>
+                <span className="text-gray-800 text-xl dark:text-gray-400 mt-1">Contact us to make it tailored to your needs</span>
               </div>
               <p className="text-start pb-4 font-semibold">Whats Included:</p>
               <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-200/30 to-neutral-200/0" />
               {/* <!-- List --> */}
               <ul role="list" className="mb-8 pt-4 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
+              <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
@@ -359,7 +447,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>Individual configuration</span>
+                  <span className="flex">Number of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -375,7 +463,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>No setup, or hidden fees</span>
+                  <span className="flex">Candidate applications:&nbsp;<span className="font-semibold"><Infinity /></span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -392,8 +480,8 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Team size:{" "}
-                    <span className="font-semibold">100+ developers</span>
+                    Team members:{" "}
+                    <span className="font-semibold">50+</span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -411,8 +499,26 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Premium support:{" "}
-                    <span className="font-semibold">36 months</span>
+                    Branding: Previous features + SSO, Whitelabelling, Remove Footer
+                  </span>
+                </li>
+                
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Previous Reminders + Follow Up
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -430,8 +536,43 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Free updates:{" "}
-                    <span className="font-semibold">36 months</span>
+                    Zoom & Google Meet Integration with aptitude tests
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Support(24/7): Previous + on-site
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>
+                    Dedicated Career Page
                   </span>
                 </li>
               </ul>

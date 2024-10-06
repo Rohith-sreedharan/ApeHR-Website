@@ -13,15 +13,20 @@ import ResponsiveMarquee from "./component/ResponsiveMarquee";
 import Dataslide from "./component/Dataslide";
 import ATSSurvey from "./component/Atssurvey";
 import Companies from "./component/Companies";
+import Countdown from "./component/Countdown";
+
 const THEME_KEY = "theme";
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [displayCountdown, setDisplayCountdown] = useState(false);
+
+  useEffect(() => {
     const savedTheme = localStorage.getItem(THEME_KEY);
-    return savedTheme === "dark";
-  });
-  // Directly setting it to the state solves the problem where the
-  // user's preference will not be resetted after re-rendering the site
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === "dark");
+    }
+  }, []);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -29,30 +34,35 @@ export default function Home() {
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [isDarkMode]);
-
-  useEffect(() => {
     localStorage.setItem(THEME_KEY, isDarkMode ? "dark" : "light");
   }, [isDarkMode]);
 
   const switchTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
+
   return (
     <div>
-      <Header isDarkMode={isDarkMode} switchTheme={switchTheme} />
-      <Hero isDarkMode={isDarkMode} />
-      <WhyUs />
-      <hr />
-      <Dataslide isDarkMode={isDarkMode} />
-      <ATSSurvey isDarkMode={isDarkMode} />
-      <SecondSlide />
-      <ResponsiveMarquee />
-      <div>
-        <Companies />
-      </div>
-      <Pricing />
-      <Footer />
+      <Header
+        isDarkMode={isDarkMode}
+        switchTheme={switchTheme}
+        setDisplayCountdown={setDisplayCountdown}
+      />
+      {displayCountdown && <Countdown setDisplayCountdown={setDisplayCountdown} />}
+      {!displayCountdown && <Hero isDarkMode={isDarkMode} setDisplayCountdown={setDisplayCountdown} />}
+      {!displayCountdown && <WhyUs />}
+      {!displayCountdown && <hr />}
+      {!displayCountdown && <Dataslide isDarkMode={isDarkMode} />}
+      {!displayCountdown && <ATSSurvey isDarkMode={isDarkMode} />}
+      {!displayCountdown && <SecondSlide />}
+      {!displayCountdown && <ResponsiveMarquee />}
+      {!displayCountdown && (
+        <div>
+          <Companies />
+        </div>
+      )}
+      {!displayCountdown && <Pricing />}
+      {!displayCountdown && <Footer />}
       {/* <ChatAiWidget
         applicationId="A93694F4-EAA9-436C-A442-AD43F444AD13"
         botId="onboarding_bot"

@@ -4,9 +4,10 @@ import React, { FC, useState } from "react";
 type HeaderProps = {
   isDarkMode: boolean;
   switchTheme: () => void;
+  setDisplayCountdown: (value: boolean) => void;
 };
 
-const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
+const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme, setDisplayCountdown }) => {
   // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // const toggleMobileMenu = () => {
@@ -83,7 +84,9 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme }) => {
           <button className="bg-black hidden md:flex font-semibold dark:bg-white text-white dark:text-black py-1.5 px-6 rounded-md hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors">
             Login
           </button>
-          <button className="bg-black font-semibold dark:bg-white text-white dark:text-black px-2 py-1.5 text-xs rounded-md hover:opacity-75 transition-opacity md:px-2 md:py-2 md:text-sm">
+          <button className="bg-black font-semibold dark:bg-white text-white dark:text-black px-2 py-1.5 text-xs rounded-md hover:opacity-75 transition-opacity md:px-2 md:py-2 md:text-sm"
+            onClick={() => setDisplayCountdown(true)}
+          >
             Start free trail
           </button>
         </div>
