@@ -39,7 +39,7 @@ export function AnimatedBeamDemo() {
     <div>
       <div className="grid grid-cols-1">
         <h1 className="text-2xl pt-2 font-bold text-center text-black dark:text-white">
-          ApeHr Potential
+          ApeHr's Potential
         </h1>
       </div>
       <div
