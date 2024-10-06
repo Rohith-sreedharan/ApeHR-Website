@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { AnimatedBeamDemo } from "./AnimatedBeam";
 import AnimatedBeamMultipleOutputDemo from "./AnimatedMultiple";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -73,6 +74,15 @@ const ATSSurveyResults: React.FC<ATSSurveyResultsProps> = ({ isDarkMode }) => {
           ))}
         </div>
       </div>
+      <p className="pl-16 pt-2 font-bold">
+        To learn more, contact us by
+        <Link href="/" className="text-purple-600  mx-1">
+          +91 760497896
+        </Link>
+        <Link href="/" className="text-purple-600  mx-1">
+          | hello@springreen.in
+        </Link>
+      </p>
     </div>
   );
 };

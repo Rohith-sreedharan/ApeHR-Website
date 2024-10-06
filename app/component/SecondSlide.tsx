@@ -98,18 +98,23 @@ const SecondSlide = () => {
         <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-bold mb-4">
           VISUALIZING SUCCESS
         </p>
+        {/* <p className="text-gray-700 dark:text-gray-200 text-xs sm:text-sm font-bold mb-4"> */}
+        {/*   OUR PRODUCT */}
+        {/* </p> */}
         <motion.h1
           initial={{ x: "-10%", opacity: 0 }}
           animate={controls}
           ref={ref}
-          className="bg-gradient-to-r from-black dark:from-white to-transparent bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 lg:mb-10 w-max"
+          className="bg-gradient-to-r from-black dark:from-white to-transparent bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-max"
           style={{
             fontSize: "clamp(1.875rem, 5vw, 3.75rem)",
           }}
         >
           Who we are?
         </motion.h1>
-
+        <motion.h1 className="mb-6 text-2xl lg:mb-10 font-bold pt-2">
+          One Stop Solution For
+        </motion.h1>
         <motion.div
           ref={ref2}
           variants={containerVariants}
@@ -117,7 +122,11 @@ const SecondSlide = () => {
           animate={inView2 ? "visible" : "hidden"}
           className="flex flex-col gap-6 md:gap-8 mb-0 sm:mb-10"
         >
-          {["Branding", "UI & UX design", "Development"].map((title, index) => (
+          {[
+            "Job Application",
+            "Applicant Tracking",
+            "Carrer Site & Job Post",
+          ].map((title, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
@@ -132,11 +141,9 @@ const SecondSlide = () => {
                 <h2 className="text-lg md:text-xl font-semibold">{title}</h2>
                 <p className="dark:font-thin text-gray-600 dark:text-gray-300 text-sm md:text-base">
                   {index === 0 &&
-                    "Consistent design makes it easy to brand your own."}
-                  {index === 1 &&
-                    "The kit is built on the principles of the atomic design system."}
-                  {index === 2 &&
-                    "Easy to customize and extend, saving you time and money."}
+                    "One clear overview for collaborative hiring "}
+                  {index === 1 && "Forms for great candidate experience"}
+                  {index === 2 && "The best looking career site out there "}
                 </p>
               </div>
             </motion.div>
@@ -152,3 +159,4 @@ const SecondSlide = () => {
 };
 
 export default SecondSlide;
+

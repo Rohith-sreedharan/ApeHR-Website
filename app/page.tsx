@@ -48,9 +48,9 @@ export default function Home() {
       <ATSSurvey isDarkMode={isDarkMode} />
       <SecondSlide />
       <ResponsiveMarquee />
-      <div>
-        <Companies />
-      </div>
+      {/* <div> */}
+      {/*   <Companies /> */}
+      {/* </div> */}
       <Pricing />
       <Footer />
       {/* <ChatAiWidget

@@ -145,7 +145,7 @@
 //       />
 //     </svg>
 //   ),
- 
+
 //   googleDrive: () => (
 //     <svg
 //       width="100"
@@ -553,79 +553,90 @@ export default function AnimatedBeamMultipleOutputDemo({
   const div7Ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div
-      className={cn(
-        "relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border  p-10 md:shadow-xl",
-        className,
-      )}
-      ref={containerRef}
-    >
-      <div className="flex size-full flex-row items-stretch justify-between gap-10 max-w-lg">
-        <div className="flex flex-col justify-center gap-2">
-          <Circle ref={div1Ref}>
-            <Icons.googleDrive />
-          </Circle>
-          <Circle ref={div2Ref}>
-            <Icons.googleDocs />
-          </Circle>
-          <Circle ref={div3Ref}>
-            <Icons.whatsapp />
-          </Circle>
-          <Circle ref={div4Ref}>
-            <Icons.messenger />
-          </Circle>
-          <Circle ref={div5Ref}>
-            <Icons.notion />
-          </Circle>
-        </div>
-        <div className="flex flex-col justify-center">
-        <Circle ref={div6Ref} className="size-20 z-10 flex bg-white border-2 items-center justify-center rounded-full  p-1 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]">
-           <Image
-               src="/apehr-logo.png"
-               alt="apeHr"
-               width={100}
-               height={100}
-               className="rounded-full object-cover"
-             />
-           </Circle>
-        </div>
-        <div className="flex flex-col justify-center">
-          <Circle ref={div7Ref}>
-            <Icons.user />
-          </Circle>
-        </div>
+    <div>
+      <div className="grid grid-cols-1">
+        <h1 className="text-2xl pt-2 font-bold text-center text-black dark:text-white">
+          Survey Sources
+        </h1>
       </div>
+      <div
+        className={cn(
+          "relative flex h-[400px] w-[600px] items-center justify-center overflow-hidden p-10 md:shadow-xl",
+          className,
+        )}
+        ref={containerRef}
+      >
+        {/* <h1 className="text-lg font-bold pl-40">Survey</h1> */}
+        <div className="flex w-full items-stretch justify-between gap-10 ">
+          <div className="flex flex-col justify-center gap-4">
+            <Circle ref={div1Ref}>
+              <Icons.googleDrive />
+            </Circle>
+            <Circle ref={div2Ref}>
+              <Icons.googleDocs />
+            </Circle>
+            <Circle ref={div3Ref}>
+              <Icons.whatsapp />
+            </Circle>
+            <Circle ref={div4Ref}>
+              <Icons.messenger />
+            </Circle>
+            <Circle ref={div5Ref}>
+              <Icons.notion />
+            </Circle>
+          </div>
+          <div className="flex flex-col justify-center">
+            <Circle
+              ref={div6Ref}
+              className="size-20 z-10 flex bg-white border-2 items-center justify-center rounded-full  p-1 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]"
+            >
+              <Image
+                src="/apehr-logo.png"
+                alt="apeHr"
+                width={100}
+                height={100}
+                className="rounded-full object-cover"
+              />
+            </Circle>
+          </div>
+          <div className="flex flex-col justify-center">
+            <Circle ref={div7Ref}>
+              <Icons.user />
+            </Circle>
+          </div>
+        </div>
 
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div1Ref}
-        toRef={div6Ref}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div2Ref}
-        toRef={div6Ref}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div3Ref}
-        toRef={div6Ref}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div4Ref}
-        toRef={div6Ref}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div5Ref}
-        toRef={div6Ref}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div6Ref}
-        toRef={div7Ref}
-      />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div1Ref}
+          toRef={div6Ref}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div2Ref}
+          toRef={div6Ref}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div3Ref}
+          toRef={div6Ref}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div4Ref}
+          toRef={div6Ref}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div5Ref}
+          toRef={div6Ref}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div6Ref}
+          toRef={div7Ref}
+        />
+      </div>
     </div>
   );
 }
@@ -1025,4 +1036,3 @@ const Icons = {
     </svg>
   ),
 };
-
