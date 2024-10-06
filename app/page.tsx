@@ -56,11 +56,11 @@ export default function Home() {
       {!displayCountdown && <ATSSurvey isDarkMode={isDarkMode} />}
       {!displayCountdown && <SecondSlide />}
       {!displayCountdown && <ResponsiveMarquee />}
-      {!displayCountdown && (
+      {/* {!displayCountdown && (
         <div>
           <Companies />
         </div>
-      )}
+      )} */}
       {!displayCountdown && <Pricing />}
       {!displayCountdown && <Footer />}
       {/* <ChatAiWidget
