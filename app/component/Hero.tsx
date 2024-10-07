@@ -83,6 +83,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode, setDisplayCountdown }) => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => setDisplayCountdown(true)}
             className="dark:bg-white bg-purple-600 text-white dark:text-black px-6 py-3 rounded-lg font-semibold text-sm sm:text-base"
           >
             Get ApeHr Pro ›

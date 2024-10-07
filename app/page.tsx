@@ -7,7 +7,7 @@ import Hero from "./component/Hero";
 import "@sendbird/chat-ai-widget/dist/style.css";
 import SecondSlide from "./component/SecondSlide";
 import Pricing from "./component/Pricing";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import WhyUs from "./component/WhyUs";
 import ResponsiveMarquee from "./component/ResponsiveMarquee";
 import Dataslide from "./component/Dataslide";
@@ -20,7 +20,20 @@ const THEME_KEY = "theme";
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [displayCountdown, setDisplayCountdown] = useState(false);
+  const secondSlideRef = useRef<HTMLDivElement>(null);
+  const pricingRef = useRef<HTMLDivElement>(null);
 
+  const scrollToSecondSlide = () => {
+    if (secondSlideRef.current) {
+      secondSlideRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToPricing = () => {
+    if (pricingRef.current) {
+      pricingRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     const savedTheme = localStorage.getItem(THEME_KEY);
     if (savedTheme) {
@@ -47,22 +60,30 @@ export default function Home() {
         isDarkMode={isDarkMode}
         switchTheme={switchTheme}
         setDisplayCountdown={setDisplayCountdown}
+        scrollToSecondSlide={scrollToSecondSlide}
+        scrollToPricing={scrollToPricing}
       />
-      {displayCountdown && <Countdown setDisplayCountdown={setDisplayCountdown} />}
+      {displayCountdown && (
+        <Countdown setDisplayCountdown={setDisplayCountdown} />
+      )}
       <Hero isDarkMode={isDarkMode} setDisplayCountdown={setDisplayCountdown} />
       <WhyUs />
       <hr />
       <Dataslide isDarkMode={isDarkMode} />
       <ATSSurvey isDarkMode={isDarkMode} />
-      <SecondSlide />
+      <SecondSlide ref={secondSlideRef} />
       <ResponsiveMarquee />
       {/* {!displayCountdown && (
         <div>
           <Companies />
         </div>
       )} */}
-      <Pricing />
-      <Footer />
+      <Pricing ref={pricingRef} />
+      <Footer
+        setDisplayCountdown={setDisplayCountdown}
+        scrollToSecondSlide={scrollToSecondSlide}
+        scrollToPricing={scrollToPricing}
+      />
       {/* <ChatAiWidget
         applicationId="A93694F4-EAA9-436C-A442-AD43F444AD13"
         botId="onboarding_bot"

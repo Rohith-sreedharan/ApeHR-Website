@@ -1,7 +1,18 @@
 import Link from "next/link";
 import React from "react";
+import { FC, useState } from "react";
 
-const Footer = () => {
+type HeaderProps = {
+  setDisplayCountdown: (value: boolean) => void;
+  scrollToSecondSlide: () => void;
+  scrollToPricing: () => void;
+};
+
+const Footer: FC<HeaderProps> = ({
+  setDisplayCountdown,
+  scrollToSecondSlide,
+  scrollToPricing,
+}) => {
   return (
     <footer className="bg-white dark:bg-black text-gray-800 dark:text-white py-12 px-4 md:px-8 relative">
       <hr className="border-gray-200 dark:border-gray-800 border-2 absolute top-0 left-0 right-0" />
@@ -49,13 +60,13 @@ const Footer = () => {
           </div>
 
           {/* Navigation columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:w-2/3">
+          <div className="grid grid-cols-2 cursor-pointer sm:grid-cols-4 gap-8 lg:w-2/3">
             <div>
               <h3 className="font-semibold mb-4 text-lg">Resources</h3>
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    onClick={() => scrollToSecondSlide()}
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     Features
@@ -63,7 +74,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    onClick={() => scrollToPricing()}
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     Pricing
@@ -71,25 +82,22 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    onClick={() => setDisplayCountdown(true)}
                   >
                     Documentation
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    onClick={() => setDisplayCountdown(true)}
                   >
                     Case Study
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
+                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                     Support
                   </a>
                 </li>
@@ -100,7 +108,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://springreen.in/about/"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     About Us
@@ -108,24 +116,24 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    onClick={() => setDisplayCountdown(true)}
                   >
                     Releases
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    onClick={() => setDisplayCountdown(true)}
                   >
                     Governance
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    onClick={() => setDisplayCountdown(true)}
                   >
                     Learn
                   </a>
@@ -137,7 +145,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    onClick={() => setDisplayCountdown(true)}
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     Community
@@ -145,16 +153,16 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    onClick={() => setDisplayCountdown(true)}
                   >
                     Terms & Conditions
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    onClick={() => setDisplayCountdown(true)}
                   >
                     Status
                   </a>
@@ -166,7 +174,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/Springreenoff/"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center"
                   >
                     <svg
@@ -214,7 +222,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://in.linkedin.com/company/springreen"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center"
                   >
                     <svg
@@ -230,7 +238,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.glassdoor.co.in/Overview/Working-at-Spring-Green-Lawn-Care-EI_IE666619.11,33.htm"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center"
                   >
                     <svg

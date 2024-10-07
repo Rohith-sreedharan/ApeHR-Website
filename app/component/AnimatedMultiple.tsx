@@ -586,8 +586,13 @@ export default function AnimatedBeamMultipleOutputDemo({
             </Circle>
           </div>
           <div className="flex flex-col justify-center">
+            <Circle ref={div6Ref}>
+              <Icons.user />
+            </Circle>
+          </div>
+          <div className="flex flex-col justify-center">
             <Circle
-              ref={div6Ref}
+              ref={div7Ref}
               className="size-20 z-10 flex bg-white border-2 items-center justify-center rounded-full  p-1 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]"
             >
               <Image
@@ -597,11 +602,6 @@ export default function AnimatedBeamMultipleOutputDemo({
                 height={100}
                 className="rounded-full object-cover"
               />
-            </Circle>
-          </div>
-          <div className="flex flex-col justify-center">
-            <Circle ref={div7Ref}>
-              <Icons.user />
             </Circle>
           </div>
         </div>
