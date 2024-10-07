@@ -1,9 +1,10 @@
 import { Infinity } from "lucide-react";
 import TextGenerator from "./text-gen";
+import { forwardRef } from "react";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
-export default function Pricing() {
+const Pricing = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <section className="bg-white dark:bg-black">
+    <section ref={ref} className="bg-white dark:bg-black">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
           <h2>
@@ -14,7 +15,10 @@ export default function Pricing() {
         </div>
         <div className="space-y-8 pt-6 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg opacity-70 hover:opacity-100 " isSideCard={true}>
+          <BackgroundGradient
+            containerClassName="rounded-lg shadow-lg opacity-70 hover:opacity-100 "
+            isSideCard={true}
+          >
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
               <h3 className="mb-4 text-3xl font-semibold">Basic</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -62,41 +66,9 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>No. of job posts:&nbsp;<span className=" font-semibold">3</span></span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  {/* <!-- Icon --> */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Candidate applications:&nbsp;<span className="font-semibold">20</span></span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  {/* <!-- Icon --> */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
                   <span>
-                    Team members:{" "}
-                    <span className="font-semibold">upto 20</span>
+                    No. of job posts:&nbsp;
+                    <span className=" font-semibold">3</span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -114,10 +86,10 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Branding: Custom domain, Brand description page
+                    Candidate applications:&nbsp;
+                    <span className="font-semibold">20</span>
                   </span>
                 </li>
-                
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
                   <svg
@@ -133,9 +105,41 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Email, Sms, Phone Reminders
-                    
+                    Team members: <span className="font-semibold">upto 20</span>
                   </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Branding: Custom domain, Brand description page</span>
+                </li>
+
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Email, Sms, Phone Reminders</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -169,9 +173,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>
-                    Support(24/7): Email
-                  </span>
+                  <span>Support(24/7): Email</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -187,9 +189,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>
-                    Dedicated Career Page
-                  </span>
+                  <span>Dedicated Career Page</span>
                 </li>
               </ul>
               <a
@@ -218,7 +218,10 @@ export default function Pricing() {
             </div>
           </BackgroundGradient>
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg" isMiddleCard={true}>
+          <BackgroundGradient
+            containerClassName="rounded-lg shadow-lg"
+            isMiddleCard={true}
+          >
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
               <h3 className="mb-4 text-3xl font-semibold">Pro</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -252,7 +255,7 @@ export default function Pricing() {
               <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-200/30 to-neutral-200/0" />
               {/* <!-- List --> */}
               <ul role="list" className="mb-8 pt-4 space-y-4 text-left">
-              <li className="flex items-center space-x-3">
+                <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
@@ -266,7 +269,12 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span className="flex">No. of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
+                  <span className="flex">
+                    No. of job posts:&nbsp;
+                    <span className=" font-semibold">
+                      <Infinity />
+                    </span>
+                  </span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -282,25 +290,11 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span className="flex">Candidate applications:&nbsp;<span className="font-semibold"><Infinity /></span></span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  {/* <!-- Icon --> */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    Team members:{" "}
-                    <span className="font-semibold">upto 50</span>
+                  <span className="flex">
+                    Candidate applications:&nbsp;
+                    <span className="font-semibold">
+                      <Infinity />
+                    </span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -318,10 +312,9 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Branding: Previous features + SSO, Whitelabelling, Remove Footer
+                    Team members: <span className="font-semibold">upto 50</span>
                   </span>
                 </li>
-                
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
                   <svg
@@ -337,8 +330,26 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Previous Reminders + Follow Up
+                    Branding: Previous features + SSO, Whitelabelling, Remove
+                    Footer
                   </span>
+                </li>
+
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Previous Reminders + Follow Up</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -372,9 +383,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>
-                    Support(24/7): Email, Phone, Virtual
-                  </span>
+                  <span>Support(24/7): Email, Phone, Virtual</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -390,9 +399,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>
-                    Dedicated Career Page
-                  </span>
+                  <span>Dedicated Career Page</span>
                 </li>
               </ul>
               <a
@@ -422,20 +429,25 @@ export default function Pricing() {
           </BackgroundGradient>
 
           {/* <!-- Pricing Card --> */}
-          <BackgroundGradient containerClassName="rounded-lg shadow-lg opacity-70 hover:opacity-100" isSideCard={true}>
+          <BackgroundGradient
+            containerClassName="rounded-lg shadow-lg opacity-70 hover:opacity-100"
+            isSideCard={true}
+          >
             <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-3xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-black dark:text-white cursor-pointer">
               <h3 className="mb-4 text-3xl font-semibold">Enterprise</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 Best for large scale uses and extended redistribution rights.
               </p>
               <div className="flex justify-center items-baseline my-8">
-                <span className="text-gray-800 text-xl dark:text-gray-400 mt-1">Contact us to make it tailored to your needs</span>
+                <span className="text-gray-800 text-xl dark:text-gray-400 mt-1">
+                  Contact us to make it tailored to your needs
+                </span>
               </div>
               <p className="text-start pb-4 font-semibold">Whats Included:</p>
               <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-200/30 to-neutral-200/0" />
               {/* <!-- List --> */}
               <ul role="list" className="mb-8 pt-4 space-y-4 text-left">
-              <li className="flex items-center space-x-3">
+                <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
@@ -449,7 +461,12 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span className="flex">No. of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
+                  <span className="flex">
+                    No. of job posts:&nbsp;
+                    <span className=" font-semibold">
+                      <Infinity />
+                    </span>
+                  </span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -465,25 +482,11 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span className="flex">Candidate applications:&nbsp;<span className="font-semibold"><Infinity /></span></span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  {/* <!-- Icon --> */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    Team members:{" "}
-                    <span className="font-semibold">50+</span>
+                  <span className="flex">
+                    Candidate applications:&nbsp;
+                    <span className="font-semibold">
+                      <Infinity />
+                    </span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -501,10 +504,9 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Branding: Previous features + SSO, Whitelabelling, Remove Footer
+                    Team members: <span className="font-semibold">50+</span>
                   </span>
                 </li>
-                
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
                   <svg
@@ -520,8 +522,26 @@ export default function Pricing() {
                     ></path>
                   </svg>
                   <span>
-                    Previous Reminders + Follow Up
+                    Branding: Previous features + SSO, Whitelabelling, Remove
+                    Footer
                   </span>
+                </li>
+
+                <li className="flex items-center space-x-3">
+                  {/* <!-- Icon --> */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Previous Reminders + Follow Up</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -555,9 +575,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>
-                    Support(24/7): Previous + on-site
-                  </span>
+                  <span>Support(24/7): Previous + on-site</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -573,9 +591,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>
-                    Dedicated Career Page
-                  </span>
+                  <span>Dedicated Career Page</span>
                 </li>
               </ul>
               <a
@@ -607,4 +623,6 @@ export default function Pricing() {
       </div>
     </section>
   );
-}
+});
+
+export default Pricing;

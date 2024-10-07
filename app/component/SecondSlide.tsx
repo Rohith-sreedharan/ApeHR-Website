@@ -6,13 +6,13 @@ import {
 } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { forwardRef, useEffect } from "react";
 import { AnimatedBeamDemo } from "./AnimatedBeam";
 import BorderBeamDemo from "./Borderbeam";
 
-const SecondSlide = () => {
+const SecondSlide = forwardRef<HTMLDivElement>((props, ref) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true });
+  const [ref1, inView] = useInView({ triggerOnce: true });
   const [ref2, inView2] = useInView({ triggerOnce: true });
 
   useEffect(() => {
@@ -45,7 +45,11 @@ const SecondSlide = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row relative bg-white dark:bg-black text-black dark:text-white p-4 sm:p-6 md:p-8 lg:p-12 overflow-hidden">
+    <div
+      ref={ref}
+      id="second-slide"
+      className="min-h-screen flex flex-col lg:flex-row relative bg-white dark:bg-black text-black dark:text-white p-4 sm:p-6 md:p-8 lg:p-12 overflow-hidden"
+    >
       <div className="right-dotted-line hidden sm:block absolute top-0 h-full left-4 sm:left-8 w-0 border-dashed border-l-2 border-gray-300 dark:border-gray-800"></div>
       <div className="top-dotted-line absolute hidden sm:block top-4 sm:top-8 w-full left-0 h-0 border-dashed border-b-2 border-gray-300 dark:border-gray-800"></div>
 
@@ -104,7 +108,7 @@ const SecondSlide = () => {
         <motion.h1
           initial={{ x: "-10%", opacity: 0 }}
           animate={controls}
-          ref={ref}
+          ref={ref1}
           className="bg-gradient-to-r from-black dark:from-white to-transparent bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-max"
           style={{
             fontSize: "clamp(1.875rem, 5vw, 3.75rem)",
@@ -156,7 +160,6 @@ const SecondSlide = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SecondSlide;
-
