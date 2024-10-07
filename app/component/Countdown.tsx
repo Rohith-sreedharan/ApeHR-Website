@@ -58,10 +58,11 @@ const Countdown: FC<CountdownProps> = ({ setDisplayCountdown }) => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+    <div className='absolute top-0 left-1/2 flex flex-col h-screen items-center justify-center'>
+    <div className="fixed pt-16 flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 p-8 rounded-lg shadow-lg" style={{ zIndex: 999 }}>
       <button
         onClick={() => setDisplayCountdown(false)}
-        className="absolute top-20 left-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
+        className="absolute top-2 left-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
       >
         <CircleArrowLeft size={24} />
       </button>
@@ -73,12 +74,13 @@ const Countdown: FC<CountdownProps> = ({ setDisplayCountdown }) => {
           </span>
         ))}
       </div>
-      <div className="mt-8 text-xl font-light tracking-wide mb-24">
+      <div className="mt-8 text-xl font-light tracking-wide mb-8">
         <span className="mx-8">Days</span>
         <span className="mx-8">Hours</span>
         <span className="mx-8">Minutes</span>
         <span className="mx-8">Seconds</span>
       </div>
+    </div>
     </div>
   )
 }

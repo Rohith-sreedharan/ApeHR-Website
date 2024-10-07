@@ -31,11 +31,11 @@ const Header: FC<HeaderProps> = ({ isDarkMode, switchTheme, setDisplayCountdown 
           {/* <span className="text-lg font-semibold">ApeHr</span> */}
           {/* Navigation */}
           <nav className="hidden md:flex space-x-5 px-4">
-            {["About Product", "Showcase", "Pricing", "Roadmap", "Compare"].map(
+            {["About Product", "Showcase", "Pricing", "Roadmap"].map(
               (item) => (
                 <a
                   key={item}
-                  href="#"
+                  href={`#${item.toLowerCase().replace(" ", "-")}`}
                   className="hover:text-gray-300 transition-colors"
                 >
                   {item}

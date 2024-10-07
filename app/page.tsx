@@ -49,20 +49,20 @@ export default function Home() {
         setDisplayCountdown={setDisplayCountdown}
       />
       {displayCountdown && <Countdown setDisplayCountdown={setDisplayCountdown} />}
-      {!displayCountdown && <Hero isDarkMode={isDarkMode} setDisplayCountdown={setDisplayCountdown} />}
-      {!displayCountdown && <WhyUs />}
-      {!displayCountdown && <hr />}
-      {!displayCountdown && <Dataslide isDarkMode={isDarkMode} />}
-      {!displayCountdown && <ATSSurvey isDarkMode={isDarkMode} />}
-      {!displayCountdown && <SecondSlide />}
-      {!displayCountdown && <ResponsiveMarquee />}
+      <Hero isDarkMode={isDarkMode} setDisplayCountdown={setDisplayCountdown} />
+      <WhyUs />
+      <hr />
+      <Dataslide isDarkMode={isDarkMode} />
+      <ATSSurvey isDarkMode={isDarkMode} />
+      <SecondSlide />
+      <ResponsiveMarquee />
       {/* {!displayCountdown && (
         <div>
           <Companies />
         </div>
       )} */}
-      {!displayCountdown && <Pricing />}
-      {!displayCountdown && <Footer />}
+      <Pricing />
+      <Footer />
       {/* <ChatAiWidget
         applicationId="A93694F4-EAA9-436C-A442-AD43F444AD13"
         botId="onboarding_bot"

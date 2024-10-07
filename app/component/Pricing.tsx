@@ -40,7 +40,8 @@ export default function Pricing() {
                   <path d="M6 13h3" />
                   <path d="M9 13c6.667 0 6.667-10 0-10" />
                 </svg>
-                <span className="mr-2 text-6xl font-extrabold">11400</span>
+                {/* <span className="mr-2 text-6xl font-extrabold">11400</span> */}
+                <span className="mr-2 text-6xl font-extrabold">XXXX</span>
                 <span className="text-gray-500 dark:text-gray-400">/year</span>
               </div>
               <p className="text-start pb-4 font-semibold">Whats Included:</p>
@@ -61,7 +62,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>Number of job posts:&nbsp;<span className=" font-semibold">3</span></span>
+                  <span>No. of job posts:&nbsp;<span className=" font-semibold">3</span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -95,7 +96,7 @@ export default function Pricing() {
                   </svg>
                   <span>
                     Team members:{" "}
-                    <span className="font-semibold">20</span>
+                    <span className="font-semibold">upto 20</span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -243,7 +244,8 @@ export default function Pricing() {
                   <path d="M6 13h3" />
                   <path d="M9 13c6.667 0 6.667-10 0-10" />
                 </svg>
-                <span className="mr-2 text-6xl font-extrabold">27000</span>
+                {/* <span className="mr-2 text-6xl font-extrabold">27000</span> */}
+                <span className="mr-2 text-6xl font-extrabold">XXXX</span>
                 <span className="text-gray-500 dark:text-gray-400">/year</span>
               </div>
               <p className="text-start pb-4 font-semibold">Whats Included:</p>
@@ -264,7 +266,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span className="flex">Number of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
+                  <span className="flex">No. of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
@@ -298,7 +300,7 @@ export default function Pricing() {
                   </svg>
                   <span>
                     Team members:{" "}
-                    <span className="font-semibold">50</span>
+                    <span className="font-semibold">upto 50</span>
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -447,7 +449,7 @@ export default function Pricing() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span className="flex">Number of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
+                  <span className="flex">No. of job posts:&nbsp;<span className=" font-semibold"><Infinity /></span></span>
                 </li>
                 <li className="flex items-center space-x-3">
                   {/* <!-- Icon --> */}
