@@ -43,7 +43,16 @@ const WhyUs: React.FC = () => {
     percentage,
     children,
   }) => {
-    const fillPercentage = percentage * 0.87
+  
+    let fillPercentage
+    if(percentage == 85){
+      fillPercentage = 75 
+    } else if(percentage == 59){
+      fillPercentage = 50
+    }
+    else{
+      fillPercentage = 65
+    }
 
     return (
       <div className="flex flex-col items-center mt-12 space-y-2">
