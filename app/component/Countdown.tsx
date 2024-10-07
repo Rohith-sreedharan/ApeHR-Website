@@ -59,7 +59,7 @@ const Countdown: FC<CountdownProps> = ({ setDisplayCountdown }) => {
 
   return (
     <div className='absolute top-0 left-1/2 flex flex-col h-screen items-center justify-center'>
-    <div className="fixed pt-16 flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 p-8 rounded-lg shadow-lg" style={{ zIndex: 999 }}>
+    <div className="fixed pt-16 flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 p-8 rounded-lg shadow-2xl" style={{ zIndex: 999 }}>
       <button
         onClick={() => setDisplayCountdown(false)}
         className="absolute top-2 left-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
