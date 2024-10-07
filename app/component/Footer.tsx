@@ -174,7 +174,7 @@ const Footer: FC<HeaderProps> = ({
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/Springreenoff/"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center"
                   >
                     <svg
@@ -222,7 +222,7 @@ const Footer: FC<HeaderProps> = ({
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://in.linkedin.com/company/springreen"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center"
                   >
                     <svg
@@ -238,7 +238,7 @@ const Footer: FC<HeaderProps> = ({
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.glassdoor.co.in/Overview/Working-at-Spring-Green-Lawn-Care-EI_IE666619.11,33.htm"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center"
                   >
                     <svg
