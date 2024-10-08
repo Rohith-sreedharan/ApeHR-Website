@@ -97,7 +97,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode, setDisplayCountdown }) => {
             Start Free Trial ›
           </motion.button>
         </motion.div>
-
+        <div className="mb-20"></div>
         {/* User avatars and rating */}
         {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
