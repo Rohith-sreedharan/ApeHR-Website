@@ -150,7 +150,7 @@ const WhyUs: React.FC = () => {
       </div>
       <p className="font-semibold pt-16 pb-4 mx-0 sm:mx-16 flex">
         To
-        <a className="text-purple-600 cursor-pointer  mx-1">learn more</a>, we
+        <a className="text-purple-600 cursor-pointer  mx-1" onClick={() => setShowModal(true)}>learn more</a>, we
         conducted a survey with a broader focus group. Below are some of the key
         questions and results.
       </p>
