@@ -219,7 +219,7 @@ const WhyUs: React.FC = () => {
                               className="block w-full rounded-md pl-2 border-0 pb-2 py-1.5 text-gray-900 dark:bg-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-violet-600 sm:text-sm sm:leading-6 dark:text-white"
                               value={formData.name}
                               onChange={handleChange}
-                              placeholder="Ex-Rohit"
+                              placeholder="Eg-Rohit"
                             />
                           </div>
                           <div className="mt-4">
@@ -232,7 +232,7 @@ const WhyUs: React.FC = () => {
                               className="block w-full rounded-md pl-2 dark:bg-black border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-violet-600 sm:text-sm sm:leading-6 dark:text-white"
                               value={formData.email}
                               onChange={handleChange}
-                              placeholder="Ex-user@gmail.com"
+                              placeholder="Eg-user@gmail.com"
                             />
                           </div>
                           <div className="mt-4">
