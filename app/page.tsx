@@ -72,7 +72,7 @@ export default function Home() {
       <Dataslide isDarkMode={isDarkMode} />
       <ATSSurvey isDarkMode={isDarkMode} />
       <SecondSlide ref={secondSlideRef} />
-      <ResponsiveMarquee />
+      {/* <ResponsiveMarquee /> */}
       {/* {!displayCountdown && (
         <div>
           <Companies />

@@ -44,15 +44,13 @@ const WhyUs: React.FC = () => {
     percentage,
     children,
   }) => {
-  
-    let fillPercentage
-    if(percentage == 85){
-      fillPercentage = 70 
-    } else if(percentage == 59){
-      fillPercentage = 55
-    }
-    else{
-      fillPercentage = 65
+    let fillPercentage;
+    if (percentage == 85) {
+      fillPercentage = 70;
+    } else if (percentage == 59) {
+      fillPercentage = 55;
+    } else {
+      fillPercentage = 65;
     }
 
     return (
@@ -167,14 +165,18 @@ const WhyUs: React.FC = () => {
               className="text-purple-500 underline"
             >
               click here
-            </button>
-            {" "}and learn more about suvey contact us compliance@springreen.in
+            </button>{" "}
+            and learn more about suvey contact us compliance@springreen.in
           </p>
         </div>
         <Head>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-      </Head>
-                <Transition.Root show={showModal} as={Fragment}>
+          <script
+            src="https://www.google.com/recaptcha/api.js"
+            async
+            defer
+          ></script>
+        </Head>
+        <Transition.Root show={showModal} as={Fragment}>
           <Dialog as="div" className="relative z-10" onClose={setShowModal}>
             <Transition.Child
               as={Fragment}
@@ -187,7 +189,7 @@ const WhyUs: React.FC = () => {
             >
               <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
             </Transition.Child>
-        
+
             <div className="fixed inset-0 z-10 overflow-y-auto">
               <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
                 <Transition.Child
@@ -210,7 +212,9 @@ const WhyUs: React.FC = () => {
                         </Dialog.Title>
                         <form onSubmit={handleSubmit}>
                           <div className="mt-4">
-                            <p className="font-semibold text-start pb-2">Name</p>
+                            <p className="font-semibold text-start pb-2">
+                              Name
+                            </p>
                             <input
                               type="text"
                               name="name"
@@ -221,7 +225,9 @@ const WhyUs: React.FC = () => {
                             />
                           </div>
                           <div className="mt-4">
-                            <p className="font-semibold text-start pb-2">Email</p>
+                            <p className="font-semibold text-start pb-2">
+                              Email
+                            </p>
                             <input
                               type="email"
                               name="email"
@@ -232,7 +238,9 @@ const WhyUs: React.FC = () => {
                             />
                           </div>
                           <div className="mt-4">
-                            <p className="font-semibold text-start pb-2">Subject</p>
+                            <p className="font-semibold text-start pb-2">
+                              Subject
+                            </p>
                             <input
                               type="text"
                               name="subject"
@@ -243,7 +251,9 @@ const WhyUs: React.FC = () => {
                             />
                           </div>
                           <div className="mt-4">
-                            <p className="font-semibold text-start pb-2">Query</p>
+                            <p className="font-semibold text-start pb-2">
+                              Query
+                            </p>
                             <input
                               type="text"
                               name="query"
@@ -253,7 +263,10 @@ const WhyUs: React.FC = () => {
                               placeholder="Your Query"
                             />
                           </div>
-                          <div className="g-recaptcha mt-4" data-sitekey="YOUR_SITE_KEY"></div>
+                          <div
+                            className="g-recaptcha mt-4"
+                            data-sitekey="YOUR_SITE_KEY"
+                          ></div>
                           <div className="mt-5 sm:mt-6 flex justify-between gap-3 ">
                             <button
                               type="submit"
