@@ -97,7 +97,7 @@ const Footer: FC<HeaderProps> = ({
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <a href="/support" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                     Support
                   </a>
                 </li>
