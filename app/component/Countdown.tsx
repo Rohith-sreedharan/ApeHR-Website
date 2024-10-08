@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, FC } from "react";
+import { useState, useEffect, FC, Fragment } from "react";
 import { CircleArrowLeft } from "lucide-react";
+import { Dialog, Transition } from "@headlessui/react";
 
 type CountdownProps = {
   setDisplayCountdown: (value: boolean) => void;
@@ -9,7 +10,6 @@ type CountdownProps = {
 
 const Countdown: FC<CountdownProps> = ({ setDisplayCountdown }) => {
   const [timeLeft, setTimeLeft] = useState<string>("00:00:00:00");
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const getTimeLeft = () => {
@@ -17,7 +17,6 @@ const Countdown: FC<CountdownProps> = ({ setDisplayCountdown }) => {
       const currentYear = now.getFullYear();
       let targetDate = new Date(currentYear, 9, 31); // Month is 0-indexed, so 9 is October
 
-      // If Halloween has already passed this year, set for next year
       if (targetDate < now) {
         targetDate.setFullYear(currentYear + 1);
       }
@@ -38,56 +37,73 @@ const Countdown: FC<CountdownProps> = ({ setDisplayCountdown }) => {
       setTimeLeft(getTimeLeft());
     };
 
-    // Update immediately and then every second
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   if (isDarkMode) {
-  //     document.documentElement.classList.add('dark')
-  //   } else {
-  //     document.documentElement.classList.remove('dark')
-  //   }
-  // }, [isDarkMode])
-  //
-  // const toggleDarkMode = () => {
-  //   setIsDarkMode(!isDarkMode)
-  // }
-
   return (
-    <div className="absolute top-0 left-1/2 flex flex-col h-screen items-center justify-center">
-      <div
-        className="fixed pt-16 flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 p-8 rounded-lg shadow-lg"
-        style={{ zIndex: 999 }}
-      >
-        <button
-          onClick={() => setDisplayCountdown(false)}
-          className="absolute top-2 left-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
+    <Transition appear show={true} as={Fragment}>
+      <Dialog as="div" className="relative z-[99]" onClose={() => setDisplayCountdown(false)}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          enterTo="opacity-100 translate-y-0 sm:scale-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+          leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         >
-          <CircleArrowLeft size={24} />
-        </button>
-        <h1 className="text-4xl mb-8 font-bold">Countdown to Product launch</h1>
-        <div className="text-7xl font-mono tracking-wider" aria-live="polite">
-          {timeLeft.split(":").map((unit, index) => (
-            <span
-              key={index}
-              className="inline-block mx-1 w-32 p-4 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+          <div className="fixed inset-0 bg-black bg-opacity-25 transition-opacity" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 z-10 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              {unit}
-            </span>
-          ))}
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-center shadow-xl transition-all sm:my-8 sm:w-full h-auto sm:max-w-3xl sm:p-6 dark:bg-black">
+                <button
+                  onClick={() => setDisplayCountdown(false)}
+                  className="absolute top-2 left-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
+                >
+                  <CircleArrowLeft size={24} />
+                </button>
+
+                <div>
+                  <h1 className="text-4xl mb-4 font-bold dark:text-white">Countdown to Product Launch</h1>
+
+                  <div className="flex justify-center items-center gap-4 mb-8">
+                    {timeLeft.split(":").map((unit, index) => (
+                      <span
+                        key={index}
+                        className="inline-block w-24 h-24 text-5xl flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-lg"
+                      >
+                        {unit}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="text-xl font-light tracking-wide mb-8 dark:text-white">
+                    <span className="mx-4">Days</span>
+                    <span className="mx-4">Hours</span>
+                    <span className="mx-4">Minutes</span>
+                    <span className="mx-4">Seconds</span>
+                  </div>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
         </div>
-        <div className="mt-8 text-xl font-light tracking-wide mb-8">
-          <span className="mx-8">Days</span>
-          <span className="mx-8">Hours</span>
-          <span className="mx-8">Minutes</span>
-          <span className="mx-8">Seconds</span>
-        </div>
-      </div>
-    </div>
+      </Dialog>
+    </Transition>
   );
 };
 
