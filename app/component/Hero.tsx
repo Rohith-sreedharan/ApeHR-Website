@@ -99,7 +99,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode, setDisplayCountdown }) => {
         </motion.div>
 
         {/* User avatars and rating */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
@@ -141,7 +141,7 @@ const LandingPage: FC<HeroProps> = ({ isDarkMode, setDisplayCountdown }) => {
               1,000+ companies will love using us
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* Chat widget */}
