@@ -150,15 +150,13 @@ const WhyUs: React.FC = () => {
       </div>
       <p className="font-semibold pt-16 pb-4 mx-0 sm:mx-16 flex">
         To
-        <Link href="/" className="text-purple-600  mx-1">
-          learn more
-        </Link>
-        , we conducted a survey with a broader focus group. Below are some of
-        the key questions and results.
+        <a className="text-purple-600 cursor-pointer  mx-1">learn more</a>, we
+        conducted a survey with a broader focus group. Below are some of the key
+        questions and results.
       </p>
       <div>
         <div className="flex font-semibold  pb-4 mx-0 sm:mx-16">
-          <p className="text-[12px]">
+          <p className="text-[15px]">
             *To learn more about this{" "}
             <button
               onClick={() => setShowModal(true)}

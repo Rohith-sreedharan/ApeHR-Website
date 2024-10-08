@@ -76,9 +76,9 @@ const ATSSurveyResults: React.FC<ATSSurveyResultsProps> = ({ isDarkMode }) => {
       </div>
       <p className="pl-16 pt-2 font-bold">
         To learn more, contact us by
-        <Link href="/" className="text-purple-600 underline  mx-1">
+        <a className="text-purple-600 cursor-pointer underline  mx-1">
           hello@springreen.in
-        </Link>
+        </a>
       </p>
     </div>
   );
