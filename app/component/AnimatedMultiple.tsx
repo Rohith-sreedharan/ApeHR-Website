@@ -513,8 +513,8 @@
 
 "use client";
 
-import React, { forwardRef, useRef } from "react";
-
+import React, { forwardRef, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import Image from "next/image";
@@ -537,6 +537,46 @@ const Circle = forwardRef<
 });
 
 Circle.displayName = "Circle";
+
+const Tooltip = ({ text, visible }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{
+      opacity: visible ? 1 : 0,
+      scale: visible ? 1 : 0.95,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    }}
+    exit={{ opacity: 0, scale: 0.95 }}
+    className={`absolute bg-white dark:bg-black text-black dark:text-white text-sm rounded-full shadow-lg backdrop-blur-md border border-gray-200 dark:border-gray-700 px-3 py-2 z-50 transform transition-all`}
+    style={{ bottom: "30%", left: "100%", transform: "translateX(-50%)" }}
+  >
+    {text}
+
+    {/* Optional arrow */}
+    {/* <div */}
+    {/*   className="absolute top-full left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-gray-900 transform rotate-45 border-t border-l border-gray-200 dark:border-gray-700" */}
+    {/*   style={{ */}
+    {/*     filter: "drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1))", */}
+    {/*   }} */}
+    {/* /> */}
+  </motion.div>
+);
+
+// IconWithTooltip Component
+const IconWithTooltip = ({ children, text }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      {children}
+      <Tooltip text={text} visible={showTooltip} />
+    </div>
+  );
+};
 
 export default function AnimatedBeamMultipleOutputDemo({
   className,
@@ -568,22 +608,33 @@ export default function AnimatedBeamMultipleOutputDemo({
       >
         {/* <h1 className="text-lg font-bold pl-40">Survey</h1> */}
         <div className="flex w-full items-stretch justify-between gap-10 ">
-          <div className="flex flex-col justify-center gap-4">
-            <Circle ref={div1Ref}>
-              <Icons.googleForms />
-            </Circle>
-            <Circle ref={div2Ref}>
-              <Icons.reddit />
-            </Circle>
-            <Circle ref={div3Ref}>
-              <Icons.linkedin />
-            </Circle>
-            <Circle ref={div4Ref}>
-              <Icons.medium />
-            </Circle>
-            <Circle ref={div5Ref}>
-              <Icons.discord />
-            </Circle>
+          <div className="flex flex-col cursor-pointer justify-center gap-4">
+            <IconWithTooltip text="GoogleForms">
+              {" "}
+              <Circle ref={div1Ref}>
+                <Icons.googleForms />
+              </Circle>
+            </IconWithTooltip>
+            <IconWithTooltip text="Reddit">
+              <Circle ref={div2Ref}>
+                <Icons.reddit />
+              </Circle>
+            </IconWithTooltip>
+            <IconWithTooltip text="Linkedin">
+              <Circle ref={div3Ref}>
+                <Icons.linkedin />
+              </Circle>
+            </IconWithTooltip>
+            <IconWithTooltip text="Medium">
+              <Circle ref={div4Ref}>
+                <Icons.medium />
+              </Circle>
+            </IconWithTooltip>
+            <IconWithTooltip text="Discord">
+              <Circle ref={div5Ref}>
+                <Icons.discord />
+              </Circle>
+            </IconWithTooltip>
           </div>
           <div className="flex flex-col justify-center">
             <Circle ref={div6Ref}>

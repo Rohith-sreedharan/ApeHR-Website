@@ -76,7 +76,11 @@ const ATSSurveyResults: React.FC<ATSSurveyResultsProps> = ({ isDarkMode }) => {
       </div>
       <p className="pl-16 pt-2 font-bold">
         To learn more, contact us by
-        <a className="text-purple-600 cursor-pointer underline mx-1 italic" style={{ fontSize: '0.875rem', fontFamily: 'cursive' }}>
+        <a
+          href="#"
+          className="text-purple-600 cursor-pointer underline mx-1 italic"
+          style={{ fontSize: "0.875rem", fontFamily: "cursive" }}
+        >
           hello@springreen.in
         </a>
       </p>

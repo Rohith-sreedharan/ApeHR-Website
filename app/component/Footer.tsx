@@ -97,7 +97,10 @@ const Footer: FC<HeaderProps> = ({
                   </a>
                 </li>
                 <li>
-                  <a href="/support" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <a
+                    href="/support"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
                     Support
                   </a>
                 </li>
@@ -263,6 +266,7 @@ const Footer: FC<HeaderProps> = ({
         <div className="text-center text-gray-600 dark:text-gray-400 text-sm pt-4">
           © 2024 ApeHr,<Link href="https://springreen.in/"> springreen.</Link>{" "}
           All rights reserved.
+          <p className="text-sm text-gray-600">Release v0.1</p>
         </div>
       </div>
     </footer>

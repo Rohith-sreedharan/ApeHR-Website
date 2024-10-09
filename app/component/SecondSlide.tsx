@@ -117,7 +117,7 @@ const SecondSlide = forwardRef<HTMLDivElement>((props, ref) => {
           Who we are?
         </motion.h1>
         <motion.h1 className="mb-6 text-2xl lg:mb-10 font-bold pt-2">
-          One Stop Solution For
+          One Stop Solution's
         </motion.h1>
         <motion.div
           ref={ref2}
