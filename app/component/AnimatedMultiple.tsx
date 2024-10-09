@@ -538,7 +538,11 @@ const Circle = forwardRef<
 
 Circle.displayName = "Circle";
 
-const Tooltip = ({ text, visible }) => (
+interface TooltipProps {
+  text: string;
+  visible: boolean;
+}
+const Tooltip: React.FC<TooltipProps> = ({ text, visible }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     animate={{
