@@ -25,10 +25,34 @@ const WhyUs: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setShowModal(false);
+
+    const { name, email, subject, query } = formData;
+
+    const text_format = `New Form Submission:\n- Name: ${name}\n- Email: ${email}\n- Subject: ${subject}\n- Query: ${query}\n-`;
+
+    const bot_token = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+    const chat_id = process.env.REACT_APP_TELEGRAM_CHAT_ID;
+    const url = `https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
+      text_format,
+    )}&parse_mode=MarkdownV2`;
+
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+      });
+      if (response.ok) {
+        alert("Form submitted and message sent to Telegram!");
+      } else {
+        alert("Failed to send message to Telegram.");
+      }
+    } catch (error) {
+      alert("Error occurred while sending the message to Telegram.");
+    }
   };
+
   useEffect(() => {
     if (inView) {
       controls.start({
@@ -150,9 +174,14 @@ const WhyUs: React.FC = () => {
       </div>
       <p className="font-semibold pt-16 pb-4 mx-0 sm:mx-16 flex">
         To
-        <a className="text-purple-600 cursor-pointer  mx-1" onClick={() => setShowModal(true)}>learn more</a>, we
-        conducted a survey with a broader focus group. Below are some of the key
-        questions and results.
+        <a
+          className="text-purple-600 cursor-pointer  mx-1"
+          onClick={() => setShowModal(true)}
+        >
+          learn more
+        </a>
+        , we conducted a survey with a broader focus group. Below are some of
+        the key questions and results.
       </p>
       <div>
         <div className="flex font-semibold  pb-4 mx-0 sm:mx-16">

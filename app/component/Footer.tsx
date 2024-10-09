@@ -13,6 +13,38 @@ const Footer: FC<HeaderProps> = ({
   scrollToSecondSlide,
   scrollToPricing,
 }) => {
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+
+  const handleSubscribeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSubscribeEmail(e.target.value);
+  };
+
+  const handleSubscribeSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const text_format = `New Subscription:\n- Email: ${subscribeEmail}\n`;
+
+    const bot_token = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+    const chat_id = process.env.REACT_APP_TELEGRAM_CHAT_ID;
+    const url = `https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
+      text_format,
+    )}&parse_mode=MarkdownV2`;
+
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+      });
+      if (response.ok) {
+        alert("Subscription successful and message sent to Telegram!");
+        setSubscribeEmail(""); // Clear the input field after successful submission
+      } else {
+        alert("Failed to send message to Telegram.");
+      }
+    } catch (error) {
+      alert("Error occurred while sending the message to Telegram.");
+    }
+  };
+
   return (
     <footer className="bg-white dark:bg-black text-gray-800 dark:text-white py-12 px-4 md:px-8 relative">
       <hr className="border-gray-200 dark:border-gray-800 border-2 absolute top-0 left-0 right-0" />
@@ -43,10 +75,14 @@ const Footer: FC<HeaderProps> = ({
                 Stay updated on new releases and features, guides, and case
                 studies.
               </p>
-              <form className="flex flex-col sm:flex-row max-w-sm w-full">
+              <form
+                className="flex flex-col sm:flex-row max-w-sm w-full"
+                onSubmit={handleSubscribeSubmit}
+              >
                 <input
                   type="email"
                   placeholder="you@domain.com"
+                  onChange={handleSubscribeChange}
                   className="bg-gray-100 dark:bg-black border text-gray-900 dark:text-white px-4 py-3 rounded-t-md sm:rounded-l-md sm:rounded-t-none flex-grow w-full sm:w-auto mb-2 sm:mb-0"
                 />
                 <button
