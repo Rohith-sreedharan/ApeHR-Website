@@ -518,6 +518,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import Image from "next/image";
+import { ReactNode } from "react";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -567,7 +568,14 @@ const Tooltip: React.FC<TooltipProps> = ({ text, visible }) => (
 );
 
 // IconWithTooltip Component
-const IconWithTooltip = ({ children, text }) => {
+interface IconWithTooltipProps {
+  children: ReactNode;
+  text: string;
+}
+const IconWithTooltip: React.FC<IconWithTooltipProps> = ({
+  children,
+  text,
+}) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
