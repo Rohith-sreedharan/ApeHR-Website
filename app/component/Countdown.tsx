@@ -15,7 +15,7 @@ const Countdown: FC<CountdownProps> = ({ setDisplayCountdown }) => {
     const getTimeLeft = () => {
       const now = new Date();
       const currentYear = now.getFullYear();
-      let targetDate = new Date(currentYear, 9, 31); // Month is 0-indexed, so 9 is October
+      let targetDate = new Date(currentYear, 10, 31); // Month is 0-indexed, so 9 is October
 
       if (targetDate < now) {
         targetDate.setFullYear(currentYear + 1);
